@@ -1,213 +1,3399 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>인베스트교육개발원 & 케이미디어센터</title>
-  <meta name="description" content="교육과 미디어가 만나 사람과 기회를 잇습니다. AI 기반 교육-취업 연계 플랫폼">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>(주) 케이미디어센터 | K-MEDIA CENTER</title>
+  <style>
+    :root {
+      --primary: #1a3a6b;
+      --accent: #f4a726;
+      --accent2: #e85d26;
+      --light: #f8f9fc;
+      --gray: #6b7280;
+      --border: #e5e7eb;
+      --white: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+      color: #1f2937;
+      background: var(--white);
+    }
+
+    /* ─── 네비게이션 ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 46px; height: 46px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-icon img {
+      width: 46px; height: 46px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .logo-icon svg {
+      width: 46px; height: 46px;
+    }
+
+    .logo-text {
+      display: flex; flex-direction: column;
+    }
+
+    .logo-text .ko { font-size: 13px; font-weight: 800; color: var(--primary); letter-spacing: -0.3px; }
+    .logo-text .en { font-size: 9px; color: var(--gray); letter-spacing: 1.5px; }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-cta {
+      background: var(--primary);
+      color: white !important;
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-size: 13px !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: #1e40af !important; }
+
+    /* ─── 히어로 ─── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a 0%, #1a3a6b 50%, #1e3a8a 100%);
+      display: flex;
+      align-items: center;
+      padding: 100px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(244,167,38,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%; left: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(244,167,38,0.15);
+      border: 1px solid rgba(244,167,38,0.4);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before { content: '✦'; }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 900;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      max-width: 580px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #1a1a1a;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(244,167,38,0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.4);
+      transition: border-color 0.2s;
+    }
+
+    .btn-outline:hover { border-color: white; }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat { text-align: center; }
+    .stat-num { font-size: 36px; font-weight: 900; color: var(--accent); }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+    /* ─── 공통 섹션 ─── */
+    section { padding: 90px 5%; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .section-header p {
+      font-size: 16px;
+      color: var(--gray);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ─── 회사 소개 ─── */
+    #about { background: var(--light); }
+
+    .about-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-visual {
+      background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+      border-radius: 20px;
+      padding: 50px 40px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+    }
+
+    .about-visual h3 { font-size: 26px; font-weight: 800; margin-bottom: 16px; }
+    .about-visual p { font-size: 15px; line-height: 1.8; opacity: 0.85; margin-bottom: 30px; }
+
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .feature-item::before {
+      content: '✓';
+      width: 22px; height: 22px;
+      background: var(--accent);
+      color: #1a1a1a;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .about-text h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .about-text h2 span { color: var(--primary); }
+
+    .about-text p {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .value-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .value-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .value-icon { font-size: 24px; margin-bottom: 8px; }
+    .value-card h4 { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 4px; }
+    .value-card p { font-size: 12px; color: var(--gray); line-height: 1.6; }
+
+    /* ─── 프로그램 ─── */
+    #programs { background: white; }
+
+    .programs-wrapper { max-width: 1200px; margin: 0 auto; }
+
+    .category-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .tab-btn {
+      padding: 10px 22px;
+      border-radius: 25px;
+      border: 2px solid var(--border);
+      background: white;
+      color: var(--gray);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .category-section { display: none; }
+    .category-section.active { display: block; }
+
+    .category-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .category-label .cat-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+
+    .category-label h3 { font-size: 22px; font-weight: 800; color: #111827; }
+    .category-label p { font-size: 13px; color: var(--gray); }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .program-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: white;
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+    }
+
+    .program-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    }
+
+    .card-header {
+      padding: 20px 20px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .card-emoji {
+      font-size: 28px;
+      width: 52px; height: 52px;
+      background: var(--light);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-meta { flex: 1; }
+
+    .card-cat {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 9px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    .card-meta h4 { font-size: 16px; font-weight: 700; color: #111827; line-height: 1.4; }
+
+    .card-body { padding: 0 20px 20px; }
+
+    .card-section { margin-bottom: 12px; }
+
+    .card-section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gray);
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .card-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .card-section ul li {
+      font-size: 13px;
+      color: #4b5563;
+      padding-left: 12px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .card-section ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--gray);
+    }
+
+    .card-jobs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .job-tag {
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* 카테고리 색상 */
+    .cat-mobility .card-cat { background: #fef3c7; color: #92400e; }
+    .cat-mobility .cat-icon { background: #fffbeb; }
+    .cat-robotics .card-cat { background: #ede9fe; color: #5b21b6; }
+    .cat-robotics .cat-icon { background: #f5f3ff; }
+    .cat-ai .card-cat { background: #dcfce7; color: #14532d; }
+    .cat-ai .cat-icon { background: #f0fdf4; }
+    .cat-pro .card-cat { background: #fce7f3; color: #831843; }
+    .cat-pro .cat-icon { background: #fdf2f8; }
+    .cat-jinro .card-cat { background: #fff7ed; color: #9a3412; }
+    .cat-jinro .cat-icon { background: #fff7ed; }
+    .cat-jinhak .card-cat { background: #f0f9ff; color: #0c4a6e; }
+    .cat-jinhak .cat-icon { background: #f0f9ff; }
+    .cat-study .card-cat { background: #f5f3ff; color: #4c1d95; }
+    .cat-study .cat-icon { background: #faf5ff; }
+    .cat-startup .card-cat { background: #fef9c3; color: #713f12; }
+    .cat-startup .cat-icon { background: #fefce8; }
+    .cat-edu .card-cat { background: #ecfdf5; color: #064e3b; }
+    .cat-edu .cat-icon { background: #f0fdf4; }
+
+    .cat-mobility .category-label .cat-icon { background: #fffbeb; }
+    .cat-robotics .category-label .cat-icon { background: #f5f3ff; }
+
+    /* ─── 교육 특징 ─── */
+    #features { background: var(--light); }
+
+    .features-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 28px;
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .feature-emoji { font-size: 40px; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 10px; }
+    .feature-card p { font-size: 14px; color: var(--gray); line-height: 1.8; }
+
+    /* ─── 진행 절차 ─── */
+    #process { background: white; }
+
+    .process-steps {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+    }
+
+    .step {
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .step-num {
+      width: 72px; height: 72px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      margin: 0 auto 16px;
+      position: relative;
+      z-index: 1;
+      border: 4px solid white;
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    .step:nth-child(4) .step-num { background: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+
+    .step h4 { font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+    .step p { font-size: 13px; color: var(--gray); line-height: 1.7; }
+
+    /* ─── CTA 섹션 ─── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+      padding: 80px 5%;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+    .cta-section p { font-size: 16px; opacity: 0.85; margin-bottom: 36px; }
+
+    /* ─── 연락처 ─── */
+    #contact { background: var(--light); }
+
+    .contact-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+    }
+
+    .contact-info h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; color: #111827; }
+    .contact-info .subtitle { font-size: 14px; color: var(--gray); margin-bottom: 32px; }
+
+    .info-items { display: flex; flex-direction: column; gap: 20px; }
+
+    .info-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 42px; height: 42px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .info-item h5 { font-size: 12px; color: var(--gray); margin-bottom: 3px; }
+    .info-item p { font-size: 15px; font-weight: 600; color: #111827; }
+
+    .contact-form {
+      background: white;
+      border-radius: 20px;
+      padding: 36px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-form h3 { font-size: 18px; font-weight: 700; margin-bottom: 24px; color: #111827; }
+
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      color: #111827;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .form-group textarea { height: 110px; resize: none; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+
+    .submit-btn:hover { background: #1e40af; }
+
+    .submit-btn:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    .form-success {
+      display: none;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .form-success .fs-icon { font-size: 36px; margin-bottom: 8px; }
+    .form-success h4 { font-size: 16px; font-weight: 700; color: #15803d; margin-bottom: 6px; }
+    .form-success p { font-size: 13px; color: #166534; }
+
+    .form-error {
+      display: none;
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #991b1b;
+      margin-top: 10px;
+    }
+
+    .required-mark { color: #ef4444; margin-left: 2px; }
+
+    /* ─── 푸터 ─── */
+    footer {
+      background: #0f172a;
+      color: rgba(255,255,255,0.7);
+      padding: 50px 5% 30px;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand .logo-text .ko,
+    .footer-brand .logo-text .en { color: white; }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.8;
+      margin-top: 14px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-col h5 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 24px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ─── 카드 이미지 ─── */
+    .card-img {
+      height: 170px;
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-img .ci-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.4s ease;
+    }
+
+    .program-card:hover .ci-bg { transform: scale(1.06); }
+
+    .card-img .ci-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.45) 100%);
+    }
+
+    .card-img .ci-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .card-img .ci-emoji {
+      font-size: 52px;
+      display: block;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .card-img .ci-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.85);
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.25);
+      padding: 3px 10px;
+      border-radius: 10px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ─── 반응형 ─── */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 30px; }
+      .process-steps::before { display: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-stats { gap: 28px; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .value-cards { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-wrap: wrap; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header" id="header">
-    <div class="container">
-      <div class="logo">Invest & K-Media</div>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact" class="btn">Contact Us</a>
-      </nav>
+<!-- ═══ 네비게이션 ═══ -->
+<nav>
+  <a class="logo" href="#">
+    <div class="logo-icon">
+      <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="dclip"><polygon points="25,1 49,25 25,49 1,25"/></clipPath>
+          <linearGradient id="dgrad" x1="1" y1="1" x2="49" y2="49" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1e40af"/>
+            <stop offset="1" stop-color="#1d4ed8"/>
+          </linearGradient>
+        </defs>
+        <polygon points="25,1 49,25 25,49 1,25" fill="url(#dgrad)"/>
+        <g clip-path="url(#dclip)" opacity="0.22">
+          <rect x="0" y="9"  width="50" height="4" fill="white"/>
+          <rect x="0" y="17" width="50" height="4" fill="white"/>
+          <rect x="0" y="25" width="50" height="4" fill="white"/>
+          <rect x="0" y="33" width="50" height="4" fill="white"/>
+          <rect x="0" y="41" width="50" height="4" fill="white"/>
+        </g>
+        <polygon points="25,1 49,25 25,49 1,25" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+        <line x1="1" y1="25" x2="49" y2="25" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        <line x1="25" y1="1" x2="25" y2="49" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+      </svg>
     </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <div class="hero-content fade-in-up">
-        <h1 class="display">교육과 미디어가 만나<br>사람과 기회를 잇습니다</h1>
-        <p>인베스트교육개발원과 주식회사 케이미디어센터가 함께 만드는<br>AI 기반 교육-취업 연계 플랫폼</p>
-        <div class="hero-btns">
-          <a href="#services" class="btn">핵심 역량 알아보기</a>
-          <a href="#contact" class="btn btn-outline">상담 문의하기</a>
-        </div>
-      </div>
+    <div class="logo-text">
+      <span class="ko">(주) 케이미디어센터</span>
+      <span class="en">K-MEDIA CENTER</span>
     </div>
-  </section>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">회사 소개</a></li>
+    <li><a href="#programs">교육 프로그램</a></li>
+    <li><a href="#history">연혁</a></li>
+    <li><a href="#features">교육 특징</a></li>
+    <li><a href="#contact" class="nav-cta">문의하기</a></li>
+  </ul>
+</nav>
 
-  <!-- About Section -->
-  <section id="about" class="container">
-    <h2 class="title-h1 fade-in-up">About Us</h2>
-    <div class="about-grid fade-in-up">
-      <div class="about-text">
-        <h3 class="title-h2 text-accent">두 가지 전문성의 결합</h3>
-        <p><strong>인베스트교육개발원</strong>은 오랜 기간 축적된 교육 연구 및 개발 노하우를 바탕으로 최적화된 맞춤형 교육 솔루션을 제공합니다.</p>
-        <p><strong>주식회사 케이미디어센터</strong>는 최신 AI 기술과 미디어 플랫폼 역량을 결합하여, 교육의 가치를 디지털 세계로 확장하고 혁신적인 취업 매칭을 구현합니다.</p>
-        <p class="text-mute">설립일: 2019.09.17 | 대표자: 임은정</p>
-      </div>
-      <div class="about-card">
-        <h3 class="title-h2">우리의 비전</h3>
-        <p class="text-mute">현장의 경험과 AI 기술력을 융합하여, 구직자와 기업 모두가 만족하는 새로운 차원의 진로·취업 생태계를 구축하는 것이 우리의 목표입니다.</p>
-      </div>
+<!-- ═══ 히어로 ═══ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">인베스트교육개발원 &amp; (주) 케이미디어센터 | 전문 직업인 체험 교육</div>
+    <h1>
+      학생의 성장을<br>
+      함께 설계하는<br>
+      <span>진로·진학 교육</span>
+    </h1>
+    <p>
+      인베스트교육개발원과 (주)케이미디어센터는 진로·AI·취업캠프부터<br>
+      고교학점제·생성형 AI·학생부 관리까지,<br>
+      <strong style="color:white;">학교 현장과 함께 성장하는 교육 전문 기관</strong>입니다.
+    </p>
+    <div class="hero-btns">
+      <a href="#programs" class="btn-primary">프로그램 살펴보기</a>
+      <a href="#contact" class="btn-outline">교육 문의하기</a>
     </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <div class="container">
-      <h2 class="title-h1 fade-in-up">Our Services</h2>
-      <div class="services-grid">
-        
-        <!-- Service 1 -->
-        <div class="service-card fade-in-up">
-          <div class="service-icon">🤝</div>
-          <h3 class="title-h2">취업/진로 및 컨설팅 (B2C, B2G)</h3>
-          <ul>
-            <li>재취업지원 서비스 (기업 및 1:1 컨설팅)</li>
-            <li>청년미래내일 일경험 기관/기업 컨설팅</li>
-            <li>특성화고·대학생 진로 캠프</li>
-            <li>군 전역 예정 장병 진로 컨설팅</li>
-            <li>공기업 서류심사 및 면접위원 활동</li>
-          </ul>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="service-card fade-in-up">
-          <div class="service-icon">🏢</div>
-          <h3 class="title-h2">기업 및 공공기관 교육 (B2B, B2G)</h3>
-          <ul>
-            <li>법정의무교육 진행</li>
-            <li>직무 역량 강화 및 리더십 교육</li>
-            <li>주요 고객사: 산림청, 특허청, 한전KPS 등 다수 파트너십 구축</li>
-          </ul>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="service-card fade-in-up">
-          <div class="service-icon">🎙️</div>
-          <h3 class="title-h2">주요 수석 및 특임 강의</h3>
-          <ul>
-            <li>챗GPT 활용 전문가 기획 및 강의</li>
-            <li>인베스트교육개발원 대표 직강</li>
-            <li>한국열린사이버대학 특임교수 활동</li>
-            <li>커뮤니케이션, 퍼스널 컬러, 이미지메이킹</li>
-          </ul>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="service-card fade-in-up">
-          <div class="service-icon">💻</div>
-          <h3 class="title-h2">SaaS 플랫폼</h3>
-          <ul>
-            <li>AI 기반 교육-취업 연계 매칭 시스템</li>
-            <li>맞춤형 교육 큐레이션</li>
-            <li>기업-인재 다이렉트 매칭 (예정/운영 중)</li>
-          </ul>
-        </div>
-
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">2019</div>
+        <div class="stat-label">인베스트교육개발원 설립</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">800+</div>
+        <div class="stat-label">학교·기관 교육 운영</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2만</div>
+        <div class="stat-label">교사 봉사 네트워크</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">80+</div>
+        <div class="stat-label">체험 교육 프로그램</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Achievements Section -->
-  <section id="achievements" class="achievements">
-    <div class="container">
-      <h2 class="title-h1 fade-in-up">숫자로 증명하는 신뢰</h2>
-      <div class="stats-grid fade-in-up">
-        <div class="stat-item">
-          <div class="stat-number">150+</div>
-          <div class="stat-label">운영한 교육 프로그램</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">12,000+</div>
-          <div class="stat-label">누적 수강생</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">30+</div>
-          <div class="stat-label">파트너 기관</div>
-        </div>
+<!-- ═══ 회사 소개 ═══ -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <h3>학생의 성장을 돕는<br>인베스트교육개발원</h3>
+      <p>
+        2019년 설립된 교육 전문 기관으로, 사단법인 가르치는사람들(2017년 설립, 서울시교육청 제258호)과 함께 학교·공공기관 800여 곳에서 진로·진학·미래학습 캠프를 운영합니다. 2026년에는 (주)케이미디어센터를 설립하여 체험형 직업교육 콘텐츠까지 확장하였습니다.
+      </p>
+      <div class="feature-list">
+        <div class="feature-item">학교·기관 800곳 이상 교육 프로그램 운영</div>
+        <div class="feature-item">교사 봉사 네트워크 '오늘과내일의 학교' (2만 명)</div>
+        <div class="feature-item">진로·세계시민 강사 양성과정 매년 50명</div>
+        <div class="feature-item">정부지원 사업 컨설팅 (희망리턴 패키지 등)</div>
       </div>
-      <p style="margin-top: var(--space-xl); opacity: 0.7; font-size: var(--text-caption);">* 2026년 기준</p>
     </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="container">
-    <h2 class="title-h1 fade-in-up">Contact Us</h2>
-    <div class="contact-grid fade-in-up">
-      <div class="contact-info">
-        <div class="contact-info-block">
-          <h3>본원 (고양)</h3>
-          <p>경기도 고양시 일산동구 고풍로 109</p>
-          <p>T. 010.9001.2942</p>
+    <div class="about-text">
+      <h2>진로부터 취업까지,<br><span>학교 현장과 함께</span> 성장합니다</h2>
+      <p>
+        특성화고등학교 대상 중소기업 이해연수 및 AI 활용교육, 진로·취업 캠프, 기업가 정신 교육, 현직자 직무 멘토링, 현장체험학습까지 — 학생의 미래를 설계하는 모든 과정을 지원합니다.
+      </p>
+      <p>
+        서울시교육청 교육후견인제 공모사업, 성동ESG 공모사업 등 정부 및 지자체 사업에 선정되어 지역사회 교육 생태계 구축에도 앞장서고 있습니다.
+      </p>
+      <div class="value-cards">
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h4>고교학점제 캠프</h4>
+          <p>개별 최적화 고교학점제 설계 및 과목 선택 전략</p>
         </div>
-        <div class="contact-info-block">
-          <h3>지사 (강남)</h3>
-          <p>서울특별시 강남구 테헤란로 79길 6 JS타워 3층 V1271</p>
-          <p>T. 010.9001.2942</p>
+        <div class="value-card">
+          <div class="value-icon">🤖</div>
+          <h4>생성형 AI 교육</h4>
+          <p>AI 기반 과제탐구, 학습법, 직업 체험 연계</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">📋</div>
+          <h4>학생부 관리 캠프</h4>
+          <p>학교생활 120% 활용, 최강 학생부 설계 전략</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🏭</div>
+          <h4>중소기업 이해연수</h4>
+          <p>특성화고 학생 대상 기업 현장 체험 및 취업 연계</p>
         </div>
       </div>
-      
-      <div class="contact-form">
-        <form action="https://formspree.io/f/your_form_id" method="POST">
-          <div class="form-group">
-            <label for="name">성함 / 기관명</label>
-            <input type="text" id="name" name="name" required placeholder="홍길동 / ○○대학교">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 교육 프로그램 ═══ -->
+<section id="programs">
+  <div class="programs-wrapper">
+    <div class="section-header">
+      <div class="section-tag">Programs</div>
+      <h2>다양한 진로체험 프로그램</h2>
+      <p>미래 직업부터 문화예술까지, 청소년의 꿈에 맞는 프로그램을 선택하세요</p>
+    </div>
+
+    <div class="category-tabs">
+      <button class="tab-btn active" onclick="showCategory('mobility')">🚗 미래 모빌리티</button>
+      <button class="tab-btn" onclick="showCategory('robotics')">🤖 로봇틱스</button>
+      <button class="tab-btn" onclick="showCategory('ai')">🧠 AI 차세대 직업</button>
+      <button class="tab-btn" onclick="showCategory('pro')">🎯 전문 직업인</button>
+      <button class="tab-btn" onclick="showCategory('startup')">💡 AI &amp; 창업</button>
+      <button class="tab-btn" onclick="showCategory('edu')">🔧 로봇 &amp; 에듀테크</button>
+      <button class="tab-btn" onclick="showCategory('jinro')">📌 진로 설계</button>
+      <button class="tab-btn" onclick="showCategory('jinhak')">🏫 진학 컨설팅</button>
+      <button class="tab-btn" onclick="showCategory('study')">📖 학습 코칭</button>
+    </div>
+
+    <!-- 미래 모빌리티 -->
+    <div id="cat-mobility" class="category-section active">
+      <div class="category-label cat-mobility">
+        <div class="cat-icon" style="background:#fffbeb; font-size:26px; width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:12px;">🚗</div>
+        <div>
+          <h3>미래 모빌리티</h3>
+          <p>전기차·드론·자율주행·수소차 등 미래 이동수단 기술 체험</p>
+        </div>
+      </div>
+      <div class="programs-grid">
+
+        <div class="program-card cat-mobility">
+          <div class="card-header">
+            <div class="card-emoji">⚡</div>
+            <div class="card-meta">
+              <span class="card-cat">미래 모빌리티</span>
+              <h4>직접 만들어 타는 전기차</h4>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">이메일</label>
-            <input type="email" id="email" name="email" required placeholder="example@email.com">
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술 이해</div>
+              <ul>
+                <li>전기차의 원리 (배터리·모터·충전 방식)</li>
+                <li>내연기관 자동차와의 차이</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>전기차 구조 모형 제작</li>
+                <li>간단한 주행 실험 및 에너지 효율 비교</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">전기차 개발 엔지니어</span>
+              <span class="job-tag">배터리 연구원</span>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="message">문의 내용</label>
-            <textarea id="message" name="message" rows="5" required placeholder="교육 과정이나 협업에 관해 문의하실 내용을 남겨주세요."></textarea>
+        </div>
+
+        <div class="program-card cat-mobility">
+          <div class="card-header">
+            <div class="card-emoji">🚁</div>
+            <div class="card-meta">
+              <span class="card-cat">미래 모빌리티</span>
+              <h4>응급 구조 드론</h4>
+            </div>
           </div>
-          <button type="submit" class="btn">문의 남기기</button>
-        </form>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술 이해</div>
+              <ul>
+                <li>드론의 비행 원리와 센서 역할</li>
+                <li>재난·응급 구조 현장 활용 사례</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>구조 드론 미션 설계</li>
+                <li>구조 물품 운반 시뮬레이션</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">드론 엔지니어</span>
+              <span class="job-tag">재난안전 기술자</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-mobility">
+          <div class="card-header">
+            <div class="card-emoji">🤖</div>
+            <div class="card-meta">
+              <span class="card-cat">미래 모빌리티</span>
+              <h4>미래 모빌리티 자율주행 자동차</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술 이해</div>
+              <ul>
+                <li>자율주행 단계 (Level 0~5)</li>
+                <li>카메라·라이다·AI 판단 구조</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>자율주행 미니카 코딩 및 주행 테스트</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">자율주행 SW 개발자</span>
+              <span class="job-tag">AI 엔지니어</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-mobility">
+          <div class="card-header">
+            <div class="card-emoji">🚢</div>
+            <div class="card-meta">
+              <span class="card-cat">미래 모빌리티</span>
+              <h4>자율주행 컨테이너 선박</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술 이해</div>
+              <ul>
+                <li>스마트 해운과 무인 선박 기술</li>
+                <li>GPS·레이더 기반 항로 제어</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>자율 항해 시나리오 설계</li>
+                <li>물류 이동 최적화 게임</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">해양IT 엔지니어</span>
+              <span class="job-tag">스마트 물류 전문가</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-mobility">
+          <div class="card-header">
+            <div class="card-emoji">💧</div>
+            <div class="card-meta">
+              <span class="card-cat">미래 모빌리티</span>
+              <h4>수소자동차 전문가</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술 이해</div>
+              <ul>
+                <li>수소 연료전지 작동 원리</li>
+                <li>친환경 에너지와 탄소중립</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>수소 에너지 실험 키트 체험</li>
+                <li>미래 친환경 차량 설계</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">수소에너지 연구원</span>
+              <span class="job-tag">친환경차 엔지니어</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container fade-in-up">
-      <h3 style="font-family: 'Fraunces', serif; margin-bottom: var(--space-sm);">Invest & K-Media</h3>
-      <p class="text-caption">인베스트교육개발원 | 주식회사 케이미디어센터 | 대표: 임은정</p>
-      <p class="text-caption">Copyright © 2026 Invest Education & K-Media Center. All rights reserved.</p>
+    <!-- 로봇틱스 -->
+    <div id="cat-robotics" class="category-section">
+      <div class="category-label cat-robotics">
+        <div class="cat-icon" style="background:#f5f3ff; font-size:26px; width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:12px;">🦾</div>
+        <div>
+          <h3>로봇틱스</h3>
+          <p>로봇팔·의수·물류 로봇·우주공학까지 미래 로봇 기술 직접 체험</p>
+        </div>
+      </div>
+      <div class="programs-grid">
+
+        <div class="program-card cat-robotics">
+          <div class="card-header">
+            <div class="card-emoji">🦾</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇틱스</span>
+              <h4>미래를 여는 엔지니어 – 로봇팔</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술 이해</div>
+              <ul>
+                <li>산업용 로봇팔의 구조와 관절 원리</li>
+                <li>제조·의료 분야 활용</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>로봇팔 조작 미션 수행</li>
+                <li>반복 작업 자동화 체험</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">로봇공학자</span>
+              <span class="job-tag">자동화 시스템 엔지니어</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-robotics">
+          <div class="card-header">
+            <div class="card-emoji">📦</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇틱스</span>
+              <h4>미래를 여는 엔지니어 – 물류 이동 로봇</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술 이해</div>
+              <ul>
+                <li>스마트 물류 시스템</li>
+                <li>센서 기반 자율 이동 기술</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>물류 로봇 경로 설계</li>
+                <li>장애물 회피 미션 수행</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">물류로봇 개발자</span>
+              <span class="job-tag">스마트팩토리 전문가</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-robotics">
+          <div class="card-header">
+            <div class="card-emoji">🖐️</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇틱스</span>
+              <h4>사람의 손을 대신하는 로봇 의수</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술 이해</div>
+              <ul>
+                <li>로봇 의수의 작동 원리</li>
+                <li>생체 신호와 로봇 기술의 결합</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>의수 모형 제작 및 제어 체험</li>
+                <li>장애 극복 기술 토의</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">바이오메디컬 엔지니어</span>
+              <span class="job-tag">의료로봇 연구원</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-robotics">
+          <div class="card-header">
+            <div class="card-emoji">🚀</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇틱스</span>
+              <h4>우주항공 – 테라포밍 화성</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술 이해</div>
+              <ul>
+                <li>화성 환경과 인류 생존 조건</li>
+                <li>테라포밍 기술 개념</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>화성 기지 설계 프로젝트</li>
+                <li>생태·에너지 시스템 구성</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">우주항공 엔지니어</span>
+              <span class="job-tag">행성 과학자</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </footer>
 
-  <!-- Scroll Animation Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const header = document.getElementById("header");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-      });
+    <!-- AI 차세대 직업 -->
+    <div id="cat-ai" class="category-section">
+      <div class="category-label cat-ai">
+        <div class="cat-icon" style="background:#f0fdf4; font-size:26px; width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:12px;">🧠</div>
+        <div>
+          <h3>AI 차세대 직업</h3>
+          <p>인공지능·휴머노이드·VR·코딩 등 미래 AI 시대 직업 탐구</p>
+        </div>
+      </div>
+      <div class="programs-grid">
 
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-      };
+        <div class="program-card cat-ai">
+          <div class="card-header">
+            <div class="card-emoji">🤖</div>
+            <div class="card-meta">
+              <span class="card-cat">AI 차세대 직업</span>
+              <h4>인공지능 전문가 – 휴머노이드</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">직업 이해</div>
+              <ul>
+                <li>인공지능 전문가와 휴머노이드 로봇의 역할</li>
+                <li>인식(AI 시각·음성)·판단·행동(로봇 제어) 구조</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>휴머노이드 동작 제어 체험</li>
+                <li>사람과 로봇의 협업 미션 수행</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">AI 로봇 엔지니어</span>
+              <span class="job-tag">휴머노이드 연구원</span>
+            </div>
+          </div>
+        </div>
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
+        <div class="program-card cat-ai">
+          <div class="card-header">
+            <div class="card-emoji">🔍</div>
+            <div class="card-meta">
+              <span class="card-cat">AI 차세대 직업</span>
+              <h4>AI 과학 수사대 (CSI)</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">직업 이해</div>
+              <ul>
+                <li>과학수사관과 AI 분석가의 역할</li>
+                <li>얼굴·지문·패턴 인식 원리</li>
+                <li>데이터 분석을 통한 단서 추적</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>가상 사건 해결 미션</li>
+                <li>AI 기반 단서 분석 게임</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">디지털 포렌식 전문가</span>
+              <span class="job-tag">데이터 분석가</span>
+            </div>
+          </div>
+        </div>
 
-      document.querySelectorAll('.fade-in-up').forEach(el => {
-        observer.observe(el);
+        <div class="program-card cat-ai">
+          <div class="card-header">
+            <div class="card-emoji">💻</div>
+            <div class="card-meta">
+              <span class="card-cat">AI 차세대 직업</span>
+              <h4>AI 웹앱 개발자 (바이브 코딩)</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">직업 이해</div>
+              <ul>
+                <li>AI 웹·앱 개발자의 업무와 진로</li>
+                <li>웹앱 구조 (UI·서버·AI 기능)</li>
+                <li>생성형 AI 활용 개발 방식</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>노코드·로우코드 도구로 AI 웹앱 제작</li>
+                <li>챗봇 또는 추천 기능 구현</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">AI 서비스 개발자</span>
+              <span class="job-tag">풀스택 개발자</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-ai">
+          <div class="card-header">
+            <div class="card-emoji">🫁</div>
+            <div class="card-meta">
+              <span class="card-cat">AI 차세대 직업</span>
+              <h4>VR로 만나는 가상해부학</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">직업 이해</div>
+              <ul>
+                <li>의료·바이오 분야와 VR 기술의 결합</li>
+                <li>디지털 헬스케어 직업군 소개</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>VR로 인체 내부 탐험</li>
+                <li>장기 구조와 기능 학습</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">의료 VR 콘텐츠 개발자</span>
+              <span class="job-tag">바이오엔지니어</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 전문 직업인 -->
+    <div id="cat-pro" class="category-section">
+      <div class="category-label cat-pro">
+        <div class="cat-icon" style="background:#fdf2f8; font-size:26px; width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:12px;">🎯</div>
+        <div>
+          <h3>전문 직업인</h3>
+          <p>뷰티·요리·디자인·미디어 등 생활밀착형 전문직 체험</p>
+        </div>
+      </div>
+      <div class="programs-grid">
+
+        <div class="program-card cat-pro">
+          <div class="card-header">
+            <div class="card-emoji">💄</div>
+            <div class="card-meta">
+              <span class="card-cat">전문 직업인</span>
+              <h4>메이크업 아티스트 – 다이소 제품으로만 화장하기</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">직업 이해</div>
+              <ul>
+                <li>메이크업 아티스트의 역할과 활동 분야</li>
+                <li>관련 학과 및 자격증 알아보기</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>나의 얼굴형·피부톤 이해하기</li>
+                <li>다이소 화장품만 활용한 기초 메이크업 실습</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">메이크업 아티스트</span>
+              <span class="job-tag">뷰티 크리에이터</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-pro">
+          <div class="card-header">
+            <div class="card-emoji">💅</div>
+            <div class="card-meta">
+              <span class="card-cat">전문 직업인</span>
+              <h4>트렌드를 디자인하다, 네일 아트 크리에이터</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">직업 이해</div>
+              <ul>
+                <li>네일 아티스트의 역할과 취업·창업 분야</li>
+                <li>위생과 안전의 중요성 알아보기</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>다양한 네일 아트 디자인 사례 탐색</li>
+                <li>네일 아트 팁(연습용 손톱) 제작 실습</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">네일 아티스트</span>
+              <span class="job-tag">뷰티 크리에이터</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-pro">
+          <div class="card-header">
+            <div class="card-emoji">🌸</div>
+            <div class="card-meta">
+              <span class="card-cat">전문 직업인</span>
+              <h4>향기로 기록하는 우리 동네, 로컬 퍼퓸 랩</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">직업 이해</div>
+              <ul>
+                <li>조향사의 역할과 향을 만드는 과정</li>
+                <li>화장품 개발자, 브랜드 마케터 등 연계 직업</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>향의 기본 노트 (탑·미들·베이스) 이해</li>
+                <li>지역 특성을 주제로 한 로컬 향수 블렌딩</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">조향사</span>
+              <span class="job-tag">브랜드 마케터</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-pro">
+          <div class="card-header">
+            <div class="card-emoji">🍽️</div>
+            <div class="card-meta">
+              <span class="card-cat">전문 직업인</span>
+              <h4>보이는 맛의 기술, 푸드스타일링 스튜디오</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">직업 이해</div>
+              <ul>
+                <li>푸드스타일리스트의 역할</li>
+                <li>영화·광고·잡지에 등장하는 음식 연출 과정 이해</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>식품 조리 기초와 스타일링 포인트 배우기</li>
+                <li>음식 사진 촬영 기초 (구도·빛·색감)</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">푸드스타일리스트</span>
+              <span class="job-tag">음식 포토그래퍼</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-pro">
+          <div class="card-header">
+            <div class="card-emoji">🍱</div>
+            <div class="card-meta">
+              <span class="card-cat">전문 직업인</span>
+              <h4>한 끼를 설계하다, 스마트 밀키트 연구소</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술·지식 이해</div>
+              <ul>
+                <li>레시피 기획, 원가·영양 균형 개념</li>
+                <li>식품 안전과 위생</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>간편 조리 밀키트 메뉴 기획</li>
+                <li>패키지 구성 및 설명서 제작</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">식품 R&D 연구원</span>
+              <span class="job-tag">푸드기획자</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-pro">
+          <div class="card-header">
+            <div class="card-emoji">🍜</div>
+            <div class="card-meta">
+              <span class="card-cat">전문 직업인</span>
+              <h4>K-FOOD 시대 – 흑백 조리사</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">직업 이해</div>
+              <ul>
+                <li>한식 세계화와 퓨전 요리 트렌드</li>
+                <li>한식 퓨전 개발자의 역할</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>한식 재료를 활용한 퓨전 메뉴 기획</li>
+                <li>음식 콘셉트 및 스토리텔링 만들기</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">푸드 크리에이터</span>
+              <span class="job-tag">외식 브랜드 개발자</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-pro">
+          <div class="card-header">
+            <div class="card-emoji">🏠</div>
+            <div class="card-meta">
+              <span class="card-cat">전문 직업인</span>
+              <h4>공간을 바꾸는 힘, 인테리어 디자이너 스튜디오</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">직업 이해</div>
+              <ul>
+                <li>실내인테리어 디자이너의 업무</li>
+                <li>주거·상업 공간 디자인 사례</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>공간 콘셉트 보드 제작</li>
+                <li>나만의 방 인테리어 설계</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">인테리어 디자이너</span>
+              <span class="job-tag">공간 디렉터</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-pro">
+          <div class="card-header">
+            <div class="card-emoji">🏯</div>
+            <div class="card-meta">
+              <span class="card-cat">전문 직업인</span>
+              <h4>전통을 짓다, 3D 한옥 메이커스</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술·지식 이해</div>
+              <ul>
+                <li>한옥의 기둥·보·지붕 구조</li>
+                <li>3D 모델링 기초 개념</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>3D 도구로 한옥 구조 설계</li>
+                <li>전통과 현대의 결합 아이디어 제시</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">건축가</span>
+              <span class="job-tag">3D 공간 디자이너</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-pro">
+          <div class="card-header">
+            <div class="card-emoji">🎨</div>
+            <div class="card-meta">
+              <span class="card-cat">전문 직업인</span>
+              <h4>웹툰·이모티콘의 시작, 디지털 드로잉 작가</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술·지식 이해</div>
+              <ul>
+                <li>태블릿 드로잉 기초</li>
+                <li>색감·레이어 활용법</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>나만의 캐릭터 또는 작품 제작</li>
+                <li>디지털 작품 전시 기획</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">일러스트레이터</span>
+              <span class="job-tag">콘텐츠 아티스트</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-pro">
+          <div class="card-header">
+            <div class="card-emoji">🎬</div>
+            <div class="card-meta">
+              <span class="card-cat">전문 직업인</span>
+              <h4>30초로 말하다, 숏폼 영상 크리에이터</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">직업 이해</div>
+              <ul>
+                <li>영상 촬영 및 편집자의 역할</li>
+                <li>유튜브·숏폼·광고·방송·SNS 콘텐츠</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>스마트폰을 활용한 영상 촬영 실습</li>
+                <li>기본 촬영 기법 실습 (앵글, 구도, 컷 분할)</li>
+                <li>간단한 편집 도구를 활용한 영상 편집</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">영상 크리에이터</span>
+              <span class="job-tag">콘텐츠 프로듀서</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-pro">
+          <div class="card-header">
+            <div class="card-emoji">⚡</div>
+            <div class="card-meta">
+              <span class="card-cat">전문 직업인</span>
+              <h4>신재생에너지 개발자</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">기술 이해</div>
+              <ul>
+                <li>태양광·풍력·수소 에너지 원리</li>
+                <li>에너지 저장 시스템 이해</li>
+              </ul>
+            </div>
+            <div class="card-section">
+              <div class="card-section-title">체험 활동</div>
+              <ul>
+                <li>친환경 에너지 발전 실험</li>
+                <li>미래 도시 에너지 설계 프로젝트</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">에너지 연구원</span>
+              <span class="job-tag">친환경 기술 엔지니어</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ══ AI & 창업 ══ -->
+    <div id="cat-startup" class="category-section">
+      <div class="category-label cat-startup">
+        <div class="cat-icon" style="background:#fefce8; font-size:26px; width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:12px;">💡</div>
+        <div>
+          <h3>AI &amp; 창업</h3>
+          <p>AI 도구 활용 창작·코딩·SDGs 등 미래 창업 역량 프로그램</p>
+        </div>
+      </div>
+      <div class="programs-grid">
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">📖</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>AI 동화책 만들기</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>인공지능으로 동화책 콘티 짜기</li>
+                <li>그림 삽화 만들기, 스토리보드 대사 작성</li>
+                <li>출판 과정과 맞춤법 교정 체험</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고등 전체</span>
+              <span class="job-tag">AI 콘텐츠 크리에이터</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">🚀</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>아이디어에서 시제품까지</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>발명 창업 자체개발 AI 앱 활용</li>
+                <li>팀 빌딩 아이스브레이킹 → 시제품 제작까지</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 전체</span>
+              <span class="job-tag">스타트업 창업자</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">📋</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>창의적 아이디어와 창업계획서</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>브레인스토밍 → 시제품 제작 → 투자유치 발표</li>
+                <li>발명 창업 AI 앱 활용 팀 빌딩 활동</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 전체</span>
+              <span class="job-tag">기업가 / 창직가</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">🤖</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>AI 리터러시 프로그램</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>AI의 정의와 Suno로 나만의 음악 만들기</li>
+                <li>챗GPT 활용 조별 연극 제작</li>
+                <li>AI로 다가올 미래 그려보기 실습</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 1-3학년</span>
+              <span class="job-tag">AI 전문가</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">📱</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>바이브 코딩으로 창업 앱 만들기</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>생활 속 문제를 해결하는 앱 아이디어 기획</li>
+                <li>화면 설계 · 기능 구현 · 발표까지</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 1-3학년</span>
+              <span class="job-tag">앱 개발자</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">🎵</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>AI 작사작곡가</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>Suno AI로 나만의 음원 제작</li>
+                <li>표지 이미지·제목 정해 유튜브 업로드까지</li>
+                <li>디지털 창작 전 과정 체험</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">음악 프로듀서</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">🖼️</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>AI 시화가</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>AI와 함께 시를 쓰고 캔바로 편집</li>
+                <li>한 권의 시화집으로 완성하는 감성 창작 수업</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">디지털 작가</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">📰</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>카드뉴스·썸네일 콘텐츠 메이커 챌린지</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>하나의 주제로 카드뉴스와 썸네일 함께 제작</li>
+                <li>실전형 콘텐츠 디자인 수업</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">콘텐츠 디자이너</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">🌿</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>SDGs 기아문제 해결 밀키트 시제품 개발</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>SDGs 의미와 목표 탐구</li>
+                <li>기후변화 인식 → 기아문제 해결 시제품 개발</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">사회적 기업가</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">♻️</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>SDGs 환경문제 & 샴푸바 만들기</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>환경문제 이해 후 직접 샴푸바 제작</li>
+                <li>친환경 생활 실천 수업</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">환경 전문가</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">💧</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>SDGs 식수해결 4단 여과정수기 만들기</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>아프리카 식수 문제 이해</li>
+                <li>4단 여과정수기 직접 설계·제작</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">환경 엔지니어</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">🔒</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>SDGs 생활안전 안전키링 메이킹</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>빨간 셀로판 키링 제작</li>
+                <li>몰래카메라 체크 원리를 배우는 생활안전 체험</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">생활안전 전문가</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-startup">
+          <div class="card-header">
+            <div class="card-emoji">📹</div>
+            <div class="card-meta">
+              <span class="card-cat">AI &amp; 창업</span>
+              <h4>AI 홍보영상 제작</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>숏폼 기획·촬영·편집 전 과정 체험</li>
+                <li>틱톡·유튜브 쇼츠 업로드 흐름 익히기</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">영상 크리에이터</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ 로봇 & 에듀테크 ══ -->
+    <div id="cat-edu" class="category-section">
+      <div class="category-label cat-edu">
+        <div class="cat-icon" style="background:#f0fdf4; font-size:26px; width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:12px;">🔧</div>
+        <div>
+          <h3>로봇 &amp; 에듀테크</h3>
+          <p>아두이노·드론·스마트팜 등 하드웨어 코딩 및 DIY 체험 프로그램</p>
+        </div>
+      </div>
+      <div class="programs-grid">
+
+        <div class="program-card cat-edu">
+          <div class="card-header">
+            <div class="card-emoji">🤖</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇 &amp; 에듀테크</span>
+              <h4>휴머노이드 로봇 제어 프로그램</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>아두이노 기반 로봇 제어 시스템 학습</li>
+                <li>센서·액추에이터 연결 및 기본 동작 구현</li>
+                <li>블루투스 앱 연동 및 블록코딩 활용</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">로봇 엔지니어</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-edu">
+          <div class="card-header">
+            <div class="card-emoji">🚗</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇 &amp; 에듀테크</span>
+              <h4>지능형 자동차 프로그램</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>아두이노 자동차 기본 주행 구현</li>
+                <li>센서 활용 응용 및 원격 제어</li>
+                <li>창의적 자동차 프로젝트</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 전체</span>
+              <span class="job-tag">자율주행 개발자</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-edu">
+          <div class="card-header">
+            <div class="card-emoji">🚁</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇 &amp; 에듀테크</span>
+              <h4>DIY 코딩 드론 프로그램</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>드론 이해와 조립</li>
+                <li>블록코딩 기초 → 드론 제어 기능 구현</li>
+                <li>응용 프로젝트 개발</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 전체</span>
+              <span class="job-tag">드론 개발자</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-edu">
+          <div class="card-header">
+            <div class="card-emoji">🌱</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇 &amp; 에듀테크</span>
+              <h4>DIY 스마트팜 프로그램</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>스마트팜 기초 이해 및 센서 시스템 구축</li>
+                <li>자동화 시스템 개발</li>
+                <li>통합 스마트팜 프로젝트</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 1-3학년</span>
+              <span class="job-tag">스마트팜 전문가</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-edu">
+          <div class="card-header">
+            <div class="card-emoji">⚙️</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇 &amp; 에듀테크</span>
+              <h4>DIY 스트로우 투석기 프로그램</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>투석기 원리 이해 및 구조 설계</li>
+                <li>단계별 조립 및 제작 실습</li>
+                <li>발사 실험</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 1-3학년</span>
+              <span class="job-tag">기계 엔지니어</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-edu">
+          <div class="card-header">
+            <div class="card-emoji">🏎️</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇 &amp; 에듀테크</span>
+              <h4>DIY 원격 조향 자동차 프로그램</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>동력 전달 시스템 구축</li>
+                <li>조향 메커니즘 개발</li>
+                <li>종합 원격 조향 프로젝트 실습</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 1-3학년</span>
+              <span class="job-tag">자동차 엔지니어</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-edu">
+          <div class="card-header">
+            <div class="card-emoji">💡</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇 &amp; 에듀테크</span>
+              <h4>스크래치 아크릴 조명 만들기</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>크릴의 빛 반사 성질 활용</li>
+                <li>나만의 아크릴 무드등 제작</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">광학 기술자</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-edu">
+          <div class="card-header">
+            <div class="card-emoji">📺</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇 &amp; 에듀테크</span>
+              <h4>LED 메시지팬</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>잔상 효과를 이용한 애니메이션 원리 이해</li>
+                <li>메시지팬의 글자 만드는 원리 탐구</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">전자 기술자</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-edu">
+          <div class="card-header">
+            <div class="card-emoji">✨</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇 &amp; 에듀테크</span>
+              <h4>레이저쇼 프로젝트</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>레이저가 할 수 있는 다양한 퍼포먼스 체험</li>
+                <li>빛과 레이저로 나를 표현하는 예술 프로젝트</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">미디어 아티스트</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-edu">
+          <div class="card-header">
+            <div class="card-emoji">🛸</div>
+            <div class="card-meta">
+              <span class="card-cat">로봇 &amp; 에듀테크</span>
+              <h4>플라잉 옥타곤</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>드론·비행기와의 차이점 이해</li>
+                <li>비행 원리와 적외선 센서 학습</li>
+                <li>충전식 재사용 비행체 조작 체험</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">초·중·고 전체</span>
+              <span class="job-tag">항공 기술자</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ 진로 설계 ══ -->
+    <div id="cat-jinro" class="category-section">
+      <div class="category-label cat-jinro">
+        <div class="cat-icon" style="background:#fff7ed; font-size:26px; width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:12px;">📌</div>
+        <div>
+          <h3>진로 설계</h3>
+          <p>진로 탐색·로드맵 설계·고교학점제·SKY 탐방 등 맞춤형 진로 프로그램</p>
+        </div>
+      </div>
+      <div class="programs-grid">
+
+        <div class="program-card cat-jinro">
+          <div class="card-header">
+            <div class="card-emoji">🌟</div>
+            <div class="card-meta">
+              <span class="card-cat">진로 설계</span>
+              <h4>DREAM UP! 진로 탐색</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-5차시]</div>
+              <ul>
+                <li>고등계열성향검사로 강점·직업 가치관 탐색</li>
+                <li>직업 세계·진학 학과 탐색</li>
+                <li>구체적 진로계획 수립 및 진로 로드맵 작성</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 1-3학년</span>
+              <span class="job-tag">진로 설계</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-jinro">
+          <div class="card-header">
+            <div class="card-emoji">🗺️</div>
+            <div class="card-meta">
+              <span class="card-cat">진로 설계</span>
+              <h4>학생부 로드맵 진로 설계 캠프</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>변화하는 대입전형 분석</li>
+                <li>선배들의 합격 사례 알아보기</li>
+                <li>학생부 점검과 로드맵 작성</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 1-3학년</span>
+              <span class="job-tag">진학 설계</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-jinro">
+          <div class="card-header">
+            <div class="card-emoji">🔄</div>
+            <div class="card-meta">
+              <span class="card-cat">진로 설계</span>
+              <h4>계열별 학업설계 전환기 캠프</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>나의 진로방향 워크시트 작성</li>
+                <li>나의 강점 이해하기</li>
+                <li>중학생활 끝판왕 워크북 작성</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 1-3학년</span>
+              <span class="job-tag">계열 탐색</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-jinro">
+          <div class="card-header">
+            <div class="card-emoji">🏛️</div>
+            <div class="card-meta">
+              <span class="card-cat">진로 설계</span>
+              <h4>고교학점제 교과 박람회</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1회]</div>
+              <ul>
+                <li>희망 계열 사전 선택 (인문·사회·자연·공학·예체능 등)</li>
+                <li>진로체험 부스, 입학사정관 상담</li>
+                <li>계열 부스 박람회 진행</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 1-3학년</span>
+              <span class="job-tag">고교학점제</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-jinro">
+          <div class="card-header">
+            <div class="card-emoji">🎓</div>
+            <div class="card-meta">
+              <span class="card-cat">진로 설계</span>
+              <h4>SKY 탐방 심층 진로 캠프</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1회]</div>
+              <ul>
+                <li>최고 수준 대학 환경 직접 경험</li>
+                <li>캠퍼스 투어·교수 특강·멘토링·입시 강의</li>
+                <li>학습 계획 수립·자기소개서·면접 준비 실전 역량 강화</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등</span>
+              <span class="job-tag">대입 동기부여</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ 진학 컨설팅 ══ -->
+    <div id="cat-jinhak" class="category-section">
+      <div class="category-label cat-jinhak">
+        <div class="cat-icon" style="background:#f0f9ff; font-size:26px; width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:12px;">🏫</div>
+        <div>
+          <h3>진학 컨설팅</h3>
+          <p>학생부 구축·입시 컨설팅·면접 실습 등 대입 맞춤형 전략 프로그램</p>
+        </div>
+      </div>
+      <div class="programs-grid">
+
+        <div class="program-card cat-jinhak">
+          <div class="card-header">
+            <div class="card-emoji">📗</div>
+            <div class="card-meta">
+              <span class="card-cat">진학 컨설팅</span>
+              <h4>명품 학생부 구축 전략</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>생성형 AI(에어탐스) 활용 융합과제탐구 구체화</li>
+                <li>계획서 작성 및 발표</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">고등 1-3학년</span>
+              <span class="job-tag">학생부 전략</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-jinhak">
+          <div class="card-header">
+            <div class="card-emoji">🧑‍💼</div>
+            <div class="card-meta">
+              <span class="card-cat">진학 컨설팅</span>
+              <h4>1:1 맞춤형 입시진학 컨설팅</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>1:1 개인 맞춤형 교과연계 학생부 활동 탐색</li>
+                <li>진학사·아로리 등 참고 컨설팅</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">고등 1-3학년</span>
+              <span class="job-tag">입시 컨설팅</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-jinhak">
+          <div class="card-header">
+            <div class="card-emoji">📚</div>
+            <div class="card-meta">
+              <span class="card-cat">진학 컨설팅</span>
+              <h4>독서세특 학생부 경쟁력 강화</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>독서 주제에서의 문제점 소개</li>
+                <li>찬성·반대 의견 피력</li>
+                <li>독서세특 보고서 작성과 발표</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 1-3학년</span>
+              <span class="job-tag">학생부 세특</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-jinhak">
+          <div class="card-header">
+            <div class="card-emoji">🎙️</div>
+            <div class="card-meta">
+              <span class="card-cat">진학 컨설팅</span>
+              <h4>ON AIR 합격 면접</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [2차시]</div>
+              <ul>
+                <li>합격면접 검사로 나의 학생부 강점 찾기</li>
+                <li>선배들의 합격 사례 분석</li>
+                <li>실제 면접 실습 진행</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">고등 1-3학년</span>
+              <span class="job-tag">면접 대비</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-jinhak">
+          <div class="card-header">
+            <div class="card-emoji">🔑</div>
+            <div class="card-meta">
+              <span class="card-cat">진학 컨설팅</span>
+              <h4>Dream Builder – 예비 고1 학생부 컨설팅</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-6차시]</div>
+              <ul>
+                <li>학생부 로드맵 검사 활용 1:1 맞춤형 탐색</li>
+                <li>교과연계 학생부 활동 컨설팅</li>
+                <li>나만의 학생부 로드맵 작성하기</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중등 1-3학년</span>
+              <span class="job-tag">예비 고1 전략</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ 학습 코칭 ══ -->
+    <div id="cat-study" class="category-section">
+      <div class="category-label cat-study">
+        <div class="cat-icon" style="background:#faf5ff; font-size:26px; width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:12px;">📖</div>
+        <div>
+          <h3>학습 코칭</h3>
+          <p>자기주도학습·공부법·고교학점제·학부모·교사 대상 학습 역량 강화 프로그램</p>
+        </div>
+      </div>
+      <div class="programs-grid">
+
+        <div class="program-card cat-study">
+          <div class="card-header">
+            <div class="card-emoji">🏫</div>
+            <div class="card-meta">
+              <span class="card-cat">학습 코칭</span>
+              <h4>슬기로운 고등학교생활</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>합격 교과선택 검사로 계열 파악</li>
+                <li>학교 교육과정 편제표 활용 학습 공부법</li>
+                <li>나만의 시간관리 학습 전략</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">고등 1-3학년</span>
+              <span class="job-tag">학습 전략</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-study">
+          <div class="card-header">
+            <div class="card-emoji">📝</div>
+            <div class="card-meta">
+              <span class="card-cat">학습 코칭</span>
+              <h4>슬기로운 중학생활</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>나의 공부 성향 파악</li>
+                <li>나에게 맞는 학습법 탐색</li>
+                <li>자기주도학습 계획 준비 전략</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중등 1-3학년</span>
+              <span class="job-tag">자기주도 학습</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-study">
+          <div class="card-header">
+            <div class="card-emoji">🎯</div>
+            <div class="card-meta">
+              <span class="card-cat">학습 코칭</span>
+              <h4>미래인재 육성 두드림 자기주도학습</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-4차시]</div>
+              <ul>
+                <li>중학공부끝판왕 / 고입&대입가이드 검사 활용</li>
+                <li>나의 공부법 진단과 성향 파악</li>
+                <li>과목별 공부법 파헤치기</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">중·고등 1-3학년</span>
+              <span class="job-tag">학습 역량</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-study">
+          <div class="card-header">
+            <div class="card-emoji">👨‍👩‍👧</div>
+            <div class="card-meta">
+              <span class="card-cat">학습 코칭</span>
+              <h4>미리 보는 대입전형 (학부모 특강)</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1-2차시]</div>
+              <ul>
+                <li>2022 개정 교육과정 변화 이해</li>
+                <li>2028 미리 보는 고교학점제 특강</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">학부모 대상</span>
+              <span class="job-tag">입시 정보</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card cat-study">
+          <div class="card-header">
+            <div class="card-emoji">👩‍🏫</div>
+            <div class="card-meta">
+              <span class="card-cat">학습 코칭</span>
+              <h4>자기주도적 진로코칭 (교사 연수)</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-section">
+              <div class="card-section-title">프로그램 내용 [1회]</div>
+              <ul>
+                <li>진로 역량 개발을 위한 메타인지 학습의 원리 특강</li>
+              </ul>
+            </div>
+            <div class="card-jobs">
+              <span class="job-tag">교사 대상</span>
+              <span class="job-tag">교원 역량</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ 주요 연혁 ═══ -->
+<section id="history" style="background:#0f172a; padding:90px 5%;">
+  <div style="max-width:900px; margin:0 auto;">
+    <div class="section-header">
+      <div class="section-tag" style="background:rgba(244,167,38,0.15); color:#f4a726;">History</div>
+      <h2 style="color:white;">주요 연혁</h2>
+      <p style="color:rgba(255,255,255,0.55);">2016년부터 현재까지, 교육 현장과 함께 걸어온 발자취</p>
+    </div>
+    <div style="position:relative; padding-left:36px;">
+      <div style="position:absolute; left:14px; top:8px; bottom:0; width:2px; background:linear-gradient(to bottom,#f4a726,rgba(244,167,38,0.1));"></div>
+
+      <div style="margin-bottom:36px;">
+        <div style="font-size:20px; font-weight:800; color:#f4a726; margin-bottom:10px; position:relative;">
+          <span style="position:absolute; left:-30px; top:50%; transform:translateY(-50%); width:14px; height:14px; border-radius:50%; background:#f4a726; border:2px solid #0f172a; box-shadow:0 0 0 2px #f4a726;"></span>
+          2019
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="background:rgba(244,167,38,0.12); border:1px solid rgba(244,167,38,0.35); border-radius:8px; padding:14px 18px; font-size:14px; color:white; font-weight:600; line-height:1.7;"><span style="color:#f4a726; font-size:11px; font-weight:700; letter-spacing:1px; margin-right:12px;">09월</span>★ 인베스트교육개발원 설립 (2019. 09. 17)</div>
+        </div>
+      </div>
+
+      <!-- 실적 및 성과 -->
+      <div style="margin-bottom:36px;">
+        <div style="font-size:20px; font-weight:800; color:#f4a726; margin-bottom:10px; position:relative;">
+          <span style="position:absolute; left:-30px; top:50%; transform:translateY(-50%); width:14px; height:14px; border-radius:50%; background:#f4a726; border:2px solid #0f172a; box-shadow:0 0 0 2px #f4a726;"></span>
+          실적 및 성과 기여도
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(244,167,38,0.15); border-radius:10px; padding:24px 28px;">
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">청년일경험프로그램 기업·기관 제안서 평가 및 프로그램 설계 <strong style="color:#f4a726;">외부전문가</strong>로 2023년 10개 기업 진행</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">2025년 초·중·고 대상 AI·SW 분야 캠프 <strong style="color:#f4a726;">100회 이상</strong> 진행</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">AI 활용 동화책 작가 <strong style="color:#f4a726;">60여 명</strong> 배출</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">강사 오픈채팅방 운영 <strong style="color:#f4a726;">800여 명</strong> 참여</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">사내 강사 <strong style="color:#f4a726;">200여 명</strong> 보유 (강사양성과정을 통한 사내강사 배출)</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">국방전직교육원 5년간 업무수행평가 우수사원 선정 및 KPI 30% 이상 초과달성 → <strong style="color:#f4a726;">국방전직교육원장상 수여</strong> 및 선임컨설턴트 위촉</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">국방전직교육원 2020년 공기업 취업 유튜브 영상 촬영</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">대한석탄공사·현대자동차·LG전자 등 대기업 <strong style="color:#f4a726;">재취업지원서비스 3년간</strong> 컨설팅 수행</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">폴리텍대학 <strong style="color:#f4a726;">6년간 강의</strong> 진행 및 그 외 10개 대학 이상 진로 프로그램 수행</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">수원시 운영 취업박람회 〈퍼스널 컬러 진단〉 부스 <strong style="color:#f4a726;">2년 참여</strong></p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;"><strong style="color:#f4a726;">50개 이상</strong> 특성화고 진로 및 인성교육 수행 / 2023년 고용노동부 정부지원사업 직업계고 취업 프로그램 제안 및 교안 제작 참여·입찰 (6개월간 업무수행)</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">킨텍스 청년장병 취업박람회 2년간 행사 참여, <strong style="color:#f4a726;">100명 이상</strong> 구직자 상담 진행</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">한국전력노조 30주년 영상, 한국대리운전협동조합 인식개선 영상 더빙 참여</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">보령관광축제재단·한국철도공사·한국전력공사·수출입은행·국민은행·농협중앙회·한국수자원공사·국민건강보험공단 등 <strong style="color:#f4a726;">50개 이상</strong> 공기업·민간기업 외부면접관 수행</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">법정의무교육 위탁기관으로 매년 <strong style="color:#f4a726;">10개 이상</strong> 기업 대상 교육 실시</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">2023년 한국보건복지인재원 교수로 위촉 → 인권·복지 관련 <strong style="color:#f4a726;">연 100시간</strong> 강의 수행</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">2023년 과천민주평화통일 주관 〈과천 통일 한마당 박람회〉 프로그램 진행</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="color:#f4a726; font-size:12px; margin-top:3px; flex-shrink:0;">▶</span>
+              <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.8;">강사양성과정 10회 진행, <strong style="color:#f4a726;">100명 이상</strong> 강사 배출 / 2026년 광진구의회 의원정책연구·강남구의회 의원정책연구 참여</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:0;">
+        <div style="font-size:20px; font-weight:800; color:#f4a726; margin-bottom:10px; position:relative;">
+          <span style="position:absolute; left:-30px; top:50%; transform:translateY(-50%); width:14px; height:14px; border-radius:50%; background:#f4a726; border:2px solid #0f172a; box-shadow:0 0 0 2px #f4a726;"></span>
+          2026
+        </div>
+        <div style="background:rgba(244,167,38,0.12); border:1px solid rgba(244,167,38,0.35); border-radius:8px; padding:14px 18px; font-size:14px; color:white; font-weight:600; line-height:1.7;"><span style="color:#f4a726; font-size:11px; font-weight:700; letter-spacing:1px; margin-right:12px;">03월</span>★ 주식회사 케이미디어센터 설립 (2026. 03. 10) — 체험형 직업교육 콘텐츠 사업 본격화</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 교육 특징 ═══ -->
+<section id="features">
+  <div class="section-header">
+    <div class="section-tag">Why Us</div>
+    <h2>인베스트교육개발원의 교육 특징</h2>
+    <p>단순한 강의가 아닌, 직접 해보고 느끼는 체험 중심 교육</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-emoji">🎯</div>
+      <h3>체험형 교육</h3>
+      <p>이론 강의에 그치지 않고 직접 만들고, 조작하고, 설계하는 핸즈온(Hands-on) 체험 중심 교육을 제공합니다.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-emoji">🏭</div>
+      <h3>현직 전문가 멘토링</h3>
+      <p>각 분야의 현직 전문 직업인이 직접 멘토로 참여하여 생생한 직업 현장 이야기를 전달합니다.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-emoji">🔮</div>
+      <h3>신산업 연계 직업</h3>
+      <p>미래 모빌리티, AI, 로봇공학 등 새롭게 떠오르는 신산업 분야의 직업을 선제적으로 탐구합니다.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-emoji">🎨</div>
+      <h3>다양한 분야 커버</h3>
+      <p>이공계부터 문화예술, 뷰티, 요리, 미디어까지 청소년의 다양한 관심사를 모두 다룹니다.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-emoji">📍</div>
+      <h3>학교 방문 교육</h3>
+      <p>장비와 강사가 학교로 직접 방문하여 이동 없이 학교 현장에서 양질의 진로 체험을 제공합니다.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-emoji">📋</div>
+      <h3>맞춤형 프로그램</h3>
+      <p>학교·기관의 요구에 맞게 프로그램을 조합하여 최적의 커리큘럼을 설계해드립니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 진행 절차 ═══ -->
+<section id="process">
+  <div class="section-header">
+    <div class="section-tag">Process</div>
+    <h2>교육 진행 절차</h2>
+    <p>문의부터 교육 완료까지 간편하게 진행됩니다</p>
+  </div>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>교육 문의</h4>
+      <p>전화, 이메일, 홈페이지 문의를 통해 교육 신청 및 상담을 시작합니다.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>프로그램 협의</h4>
+      <p>학교·기관 상황에 맞는 프로그램과 일정, 인원을 협의하고 확정합니다.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>교육 준비</h4>
+      <p>전문 강사 배정, 교육 자료 및 체험 키트 준비를 완료합니다.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>교육 진행</h4>
+      <p>현장 방문 또는 온라인으로 체험형 교육을 진행하고 결과물을 공유합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<div class="cta-section">
+  <h2>우리 학교에도 교육 프로그램을 도입해보세요!</h2>
+  <p>인베스트교육개발원 &amp; (주)케이미디어센터가 학생의 성장을 함께 설계합니다.</p>
+  <a href="#contact" class="btn-primary">지금 바로 문의하기</a>
+</div>
+
+<!-- ═══ 연락처 ═══ -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-tag">Contact</div>
+    <h2>교육 문의하기</h2>
+    <p>궁금하신 점은 언제든 연락 주세요. 빠르게 답변드리겠습니다.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>인베스트교육개발원</h3>
+      <p class="subtitle">진로·진학·취업·AI 교육 전문 기관</p>
+      <div class="info-items">
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div>
+            <h5>전화 문의</h5>
+            <p>010-9001-2942</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h5>이메일 문의</h5>
+            <p>rjdgh1@nate.com</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🕐</div>
+          <div>
+            <h5>운영 시간</h5>
+            <p>평일 09:00 ~ 18:00</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <h5>소재지</h5>
+            <p style="font-size:13px; line-height:1.8;">경기도 고양시 일산동구 고풍로 109 206동 3604호<br>서울시 강남구 테헤란로 79길 6 JS타워 3층 V1271<br><span style="font-size:12px; color:#6b7280;">서울시교육청 허가 제258호</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form" style="background:var(--primary);border-radius:20px;padding:40px;border:none;display:flex;flex-direction:column;justify-content:center;gap:0;">
+      <h3 style="color:white;font-size:20px;font-weight:800;margin-bottom:8px;">📌 교육 문의 안내</h3>
+      <p style="color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:32px;line-height:1.7;">전화 또는 이메일로 문의 주시면<br>빠르게 맞춤 상담을 도와드립니다.</p>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <a href="tel:010-9001-2942" style="display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.1);border-radius:12px;padding:18px 22px;text-decoration:none;transition:background 0.2s;">
+          <span style="font-size:24px;">📞</span>
+          <div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:1px;margin-bottom:3px;">CALL</div>
+            <div style="font-size:18px;font-weight:800;color:white;">010-9001-2942</div>
+          </div>
+        </a>
+        <a href="mailto:rjdgh1@nate.com" style="display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.1);border-radius:12px;padding:18px 22px;text-decoration:none;transition:background 0.2s;">
+          <span style="font-size:24px;">✉️</span>
+          <div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:1px;margin-bottom:3px;">EMAIL</div>
+            <div style="font-size:16px;font-weight:700;color:white;">rjdgh1@nate.com</div>
+          </div>
+        </a>
+        <div style="display:flex;align-items:center;gap:16px;background:rgba(244,167,38,0.2);border:1px solid rgba(244,167,38,0.4);border-radius:12px;padding:18px 22px;">
+          <span style="font-size:24px;">🕐</span>
+          <div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:1px;margin-bottom:3px;">HOURS</div>
+            <div style="font-size:15px;font-weight:700;color:white;">평일 09:00 ~ 18:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 공유 배너 ═══ -->
+<div id="share-bar" style="
+  background: linear-gradient(135deg,#0f172a,#1e3a8a);
+  padding: 28px 5%;
+  text-align: center;
+  position: relative;
+">
+  <p style="color:rgba(255,255,255,0.6);font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Share this page</p>
+  <p style="color:white;font-size:17px;font-weight:700;margin-bottom:18px;">
+    🔗 <span id="site-url">https://kmediacenter.surge.sh</span>
+  </p>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+    <button onclick="copyLink()" style="background:#f4a726;color:#111;border:none;padding:11px 24px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;">📋 링크 복사</button>
+    <button onclick="shareKakao()" style="background:#FEE500;color:#3A1D1D;border:none;padding:11px 24px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;">💬 카카오톡 공유</button>
+    <button onclick="showQR()" style="background:white;color:#1a3a6b;border:none;padding:11px 24px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;">📱 QR코드 보기</button>
+  </div>
+  <div id="copy-toast" style="display:none;margin-top:12px;color:#86efac;font-size:13px;font-weight:600;">✅ 링크가 클립보드에 복사되었습니다!</div>
+</div>
+
+<!-- QR 모달 -->
+<div id="qr-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:white;border-radius:20px;padding:36px;text-align:center;max-width:320px;width:90%;position:relative;">
+    <button onclick="document.getElementById('qr-modal').style.display='none'" style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:#6b7280;">✕</button>
+    <h3 style="font-size:17px;font-weight:800;margin-bottom:6px;color:#111827;">(주) 케이미디어센터</h3>
+    <p style="font-size:12px;color:#6b7280;margin-bottom:18px;">스마트폰으로 QR코드를 스캔하세요</p>
+    <div id="qr-container" style="display:flex;justify-content:center;margin-bottom:16px;"></div>
+    <p style="font-size:11px;color:#9ca3af;">https://kmediacenter.surge.sh</p>
+  </div>
+</div>
+
+<!-- ═══ 푸터 ═══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">
+      <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="dclip"><polygon points="25,1 49,25 25,49 1,25"/></clipPath>
+          <linearGradient id="dgrad" x1="1" y1="1" x2="49" y2="49" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1e40af"/>
+            <stop offset="1" stop-color="#1d4ed8"/>
+          </linearGradient>
+        </defs>
+        <polygon points="25,1 49,25 25,49 1,25" fill="url(#dgrad)"/>
+        <g clip-path="url(#dclip)" opacity="0.22">
+          <rect x="0" y="9"  width="50" height="4" fill="white"/>
+          <rect x="0" y="17" width="50" height="4" fill="white"/>
+          <rect x="0" y="25" width="50" height="4" fill="white"/>
+          <rect x="0" y="33" width="50" height="4" fill="white"/>
+          <rect x="0" y="41" width="50" height="4" fill="white"/>
+        </g>
+        <polygon points="25,1 49,25 25,49 1,25" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+        <line x1="1" y1="25" x2="49" y2="25" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        <line x1="25" y1="1" x2="25" y2="49" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+      </svg>
+    </div>
+        <div class="logo-text">
+          <span class="ko">(주) 케이미디어센터</span>
+          <span class="en">K-MEDIA CENTER</span>
+        </div>
+      </div>
+      <p>
+        학생의 성장을 함께 설계하는<br>
+        진로·진학·취업·AI 교육 전문 기관
+      </p>
+    </div>
+    <div class="footer-col">
+      <h5>교육 프로그램</h5>
+      <ul>
+        <li><a href="#programs">미래 모빌리티</a></li>
+        <li><a href="#programs">로봇틱스</a></li>
+        <li><a href="#programs">AI 차세대 직업</a></li>
+        <li><a href="#programs">전문 직업인</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>회사 정보</h5>
+      <ul>
+        <li><a href="#about">회사 소개</a></li>
+        <li><a href="#features">교육 특징</a></li>
+        <li><a href="#process">진행 절차</a></li>
+        <li><a href="#contact">문의하기</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>연락처</h5>
+      <ul>
+        <li><a href="#">📞 010-9001-2942</a></li>
+        <li><a href="#">✉️ rjdgh1@nate.com</a></li>
+        <li><a href="#">🕐 평일 09:00 ~ 18:00</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 인베스트교육개발원 · (주) 케이미디어센터. All rights reserved.</span>
+    <span>사업자등록번호: 166-88-03552</span>
+  </div>
+</footer>
+
+<script>
+  /* ═══ 카드 이미지 자동 생성 ═══ */
+  const cardImageCfg = {
+    'cat-mobility': {
+      gradient: 'linear-gradient(135deg,#0d2137 0%,#0f3460 40%,#1565c0 100%)',
+      items: [
+        { emoji:'⚡', label:'ELECTRIC CAR' },
+        { emoji:'🚁', label:'RESCUE DRONE' },
+        { emoji:'🤖', label:'AUTONOMOUS' },
+        { emoji:'🚢', label:'SMART SHIP' },
+        { emoji:'💧', label:'HYDROGEN CAR' }
+      ]
+    },
+    'cat-robotics': {
+      gradient: 'linear-gradient(135deg,#1a0533 0%,#4c1d95 40%,#6d28d9 100%)',
+      items: [
+        { emoji:'🦾', label:'ROBOT ARM' },
+        { emoji:'📦', label:'LOGISTICS ROBOT' },
+        { emoji:'🖐️', label:'ROBOT PROSTHETIC' },
+        { emoji:'🚀', label:'SPACE TERRAFORMING' }
+      ]
+    },
+    'cat-ai': {
+      gradient: 'linear-gradient(135deg,#022c22 0%,#065f46 40%,#059669 100%)',
+      items: [
+        { emoji:'🤖', label:'HUMANOID AI' },
+        { emoji:'🔍', label:'AI CSI' },
+        { emoji:'💻', label:'VIBE CODING' },
+        { emoji:'🫁', label:'VR ANATOMY' }
+      ]
+    },
+    'cat-pro': {
+      gradient: 'linear-gradient(135deg,#500724 0%,#9d174d 40%,#db2777 100%)',
+      items: [
+        { emoji:'💄', label:'MAKEUP ARTIST' },
+        { emoji:'💅', label:'NAIL ART' },
+        { emoji:'🌸', label:'LOCAL PERFUME' },
+        { emoji:'🍽️', label:'FOOD STYLING' },
+        { emoji:'🍱', label:'MEAL KIT' },
+        { emoji:'🍜', label:'K-FOOD' },
+        { emoji:'🏠', label:'INTERIOR DESIGN' },
+        { emoji:'🏯', label:'3D HANOK' },
+        { emoji:'🎨', label:'DIGITAL DRAWING' },
+        { emoji:'🎬', label:'SHORT FILM' },
+        { emoji:'⚡', label:'RENEWABLE ENERGY' }
+      ]
+    },
+    'cat-startup': {
+      gradient: 'linear-gradient(135deg,#431407 0%,#9a3412 40%,#ea580c 100%)',
+      items: [
+        { emoji:'📖', label:'AI PICTURE BOOK' },
+        { emoji:'🚀', label:'PROTOTYPE' },
+        { emoji:'📋', label:'STARTUP PLAN' },
+        { emoji:'🤖', label:'AI LITERACY' },
+        { emoji:'📱', label:'VIBE CODING APP' },
+        { emoji:'🎵', label:'AI MUSIC MAKER' },
+        { emoji:'🖼️', label:'AI POETRY ART' },
+        { emoji:'📰', label:'CONTENT MAKER' },
+        { emoji:'🌿', label:'SDGs MEAL KIT' },
+        { emoji:'♻️', label:'SDGs ECO' },
+        { emoji:'💧', label:'SDGs WATER' },
+        { emoji:'🔒', label:'SDGs SAFETY' },
+        { emoji:'📹', label:'AI VIDEO' }
+      ]
+    },
+    'cat-edu': {
+      gradient: 'linear-gradient(135deg,#022c22 0%,#134e4a 40%,#0f766e 100%)',
+      items: [
+        { emoji:'🤖', label:'HUMANOID ROBOT' },
+        { emoji:'🚗', label:'SMART CAR' },
+        { emoji:'🚁', label:'DIY DRONE' },
+        { emoji:'🌱', label:'SMART FARM' },
+        { emoji:'⚙️', label:'TREBUCHET DIY' },
+        { emoji:'🏎️', label:'RC CAR DIY' },
+        { emoji:'💡', label:'ACRYLIC LIGHT' },
+        { emoji:'📺', label:'LED MESSAGE' },
+        { emoji:'✨', label:'LASER SHOW' },
+        { emoji:'🛸', label:'FLYING OCTAGON' }
+      ]
+    },
+    'cat-jinro': {
+      gradient: 'linear-gradient(135deg,#431407 0%,#7c2d12 40%,#b45309 100%)',
+      items: [
+        { emoji:'🌟', label:'DREAM UP' },
+        { emoji:'🗺️', label:'CAREER ROADMAP' },
+        { emoji:'🔄', label:'COURSE DESIGN' },
+        { emoji:'🏛️', label:'CREDIT SYSTEM' },
+        { emoji:'🎓', label:'SKY CAMPUS TOUR' }
+      ]
+    },
+    'cat-jinhak': {
+      gradient: 'linear-gradient(135deg,#0c1445 0%,#1e3a8a 40%,#1d4ed8 100%)',
+      items: [
+        { emoji:'📗', label:'STUDENT RECORD' },
+        { emoji:'🧑‍💼', label:'1:1 CONSULTING' },
+        { emoji:'📚', label:'READING RECORD' },
+        { emoji:'🎙️', label:'MOCK INTERVIEW' },
+        { emoji:'🔑', label:'PRE-HIGH SCHOOL' }
+      ]
+    },
+    'cat-study': {
+      gradient: 'linear-gradient(135deg,#2e1065 0%,#4c1d95 40%,#7c3aed 100%)',
+      items: [
+        { emoji:'🏫', label:'SMART HIGH SCHOOL' },
+        { emoji:'📝', label:'SMART MIDDLE SCHOOL' },
+        { emoji:'🎯', label:'SELF-DIRECTED STUDY' },
+        { emoji:'👨‍👩‍👧', label:'PARENT SEMINAR' },
+        { emoji:'👩‍🏫', label:'TEACHER TRAINING' }
+      ]
+    }
+  };
+
+  (function buildCardImages() {
+    Object.entries(cardImageCfg).forEach(function(entry) {
+      var catClass = entry[0];
+      var cfg = entry[1];
+      var cards = document.querySelectorAll('.' + catClass + '.program-card');
+      cards.forEach(function(card, idx) {
+        var item = cfg.items[idx % cfg.items.length];
+        var imgDiv = document.createElement('div');
+        imgDiv.className = 'card-img';
+        var bgDiv = document.createElement('div');
+        bgDiv.className = 'ci-bg';
+        bgDiv.style.cssText = 'background:' + cfg.gradient + ';width:100%;height:100%;position:absolute;inset:0;';
+        var overlayDiv = document.createElement('div');
+        overlayDiv.className = 'ci-overlay';
+        var contentDiv = document.createElement('div');
+        contentDiv.className = 'ci-content';
+        contentDiv.innerHTML = '<span class="ci-emoji">' + item.emoji + '</span><span class="ci-label">' + item.label + '</span>';
+        imgDiv.appendChild(bgDiv);
+        imgDiv.appendChild(overlayDiv);
+        imgDiv.appendChild(contentDiv);
+        card.insertBefore(imgDiv, card.firstChild);
       });
     });
-  </script>
+  })();
+
+  // 탭 전환
+  function showCategory(id) {
+    document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('cat-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     [Google Sheets 연동 설정 방법]
+
+     1. Google Sheets 새 스프레드시트 생성
+     2. 메뉴 → 확장 프로그램 → Apps Script 클릭
+     3. 아래 코드를 붙여넣고 저장(Ctrl+S):
+
+     function doPost(e) {
+       var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+       var data  = JSON.parse(e.postData.contents);
+       if(sheet.getLastRow()===0){
+         sheet.appendRow(['접수시간','기관명','담당자','연락처','이메일','관심분야','교육인원','희망시기','문의내용']);
+       }
+       sheet.appendRow([data.ts,data.institution,data.name,data.phone,
+                        data.email,data.program,data.headcount,data.period,data.message]);
+       return ContentService.createTextOutput('ok');
+     }
+
+     4. 배포 → 새 배포 → 웹 앱 선택
+        - 액세스: '모든 사용자'로 설정
+     5. 배포 후 표시되는 URL을 아래 SHEET_URL 에 붙여넣기
+     ═══════════════════════════════════════════════════════════ */
+
+  const SHEET_URL = '여기에_구글_앱스스크립트_URL_붙여넣기';
+
+  function submitForm(e) {
+    e.preventDefault();
+
+    var institution = document.getElementById('f-institution').value.trim();
+    var name        = document.getElementById('f-name').value.trim();
+    var phone       = document.getElementById('f-phone').value.trim();
+    var email       = document.getElementById('f-email').value.trim();
+    var program     = document.getElementById('f-program').value;
+    var headcount   = document.getElementById('f-headcount').value;
+    var period      = document.getElementById('f-period').value;
+    var message     = document.getElementById('f-message').value.trim();
+    var errEl       = document.getElementById('form-error');
+    var btn         = document.getElementById('submit-btn');
+
+    errEl.style.display = 'none';
+
+    if (!institution || !name || !phone) {
+      errEl.textContent = '⚠️ 기관명, 담당자 이름, 연락처는 필수 입력 항목입니다.';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    if (SHEET_URL.indexOf('여기에') !== -1) {
+      /* Google Script URL 미설정 시 → 안내 알림 후 성공 처리 (테스트 모드) */
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '접수 중... ⏳';
+
+    var payload = {
+      ts: new Date().toLocaleString('ko-KR'),
+      institution: institution,
+      name: name,
+      phone: phone,
+      email: email,
+      program: program,
+      headcount: headcount,
+      period: period,
+      message: message
+    };
+
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function() {
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    })
+    .catch(function() {
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = '문의 접수하기 →';
+    });
+  }
+
+  /* ═══ 공유 기능 ═══ */
+  var SITE_URL = 'https://kmediacenter.surge.sh';
+
+  /* 실제 배포된 URL로 자동 감지 */
+  (function() {
+    if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1' && location.hostname !== '') {
+      SITE_URL = location.origin;
+      var el = document.getElementById('site-url');
+      if (el) el.textContent = SITE_URL;
+    }
+  })();
+
+  function copyLink() {
+    navigator.clipboard.writeText(SITE_URL).then(function() {
+      var toast = document.getElementById('copy-toast');
+      toast.style.display = 'block';
+      setTimeout(function() { toast.style.display = 'none'; }, 2500);
+    }).catch(function() {
+      prompt('아래 주소를 복사하세요 (Ctrl+C):', SITE_URL);
+    });
+  }
+
+  function shareKakao() {
+    var title = '(주) 케이미디어센터 교육 프로그램 안내';
+    var text = '미래 모빌리티·로봇·AI·진로설계 등\n80개+ 전문 직업 체험 프로그램';
+    /* 모바일: Web Share API → 카카오톡 앱 직접 열기 */
+    if (navigator.share) {
+      navigator.share({ title: title, text: text, url: SITE_URL })
+        .catch(function(err) {
+          if (err.name !== 'AbortError') {
+            window.open('https://sharer.kakao.com/talk/friends/picker/link?url=' + encodeURIComponent(SITE_URL), '_blank');
+          }
+        });
+    } else {
+      /* PC: 카카오 공유 URL로 팝업 열기 */
+      window.open('https://sharer.kakao.com/talk/friends/picker/link?url=' + encodeURIComponent(SITE_URL), '_blank', 'width=500,height=600');
+    }
+  }
+
+  function showQR() {
+    var modal = document.getElementById('qr-modal');
+    modal.style.display = 'flex';
+    var container = document.getElementById('qr-container');
+    if (container.innerHTML === '') {
+      /* QRServer API - 무료 QR 생성 서비스 */
+      var img = document.createElement('img');
+      img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent(SITE_URL);
+      img.alt = 'QR Code';
+      img.style.borderRadius = '8px';
+      container.appendChild(img);
+    }
+  }
+</script>
 </body>
 </html>

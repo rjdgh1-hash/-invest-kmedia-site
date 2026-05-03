@@ -192,9 +192,21 @@ section {
   background-color: #fff;
 }
 
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.section-subtitle {
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-top: -var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-md);
 }
 
@@ -202,37 +214,43 @@ section {
   background-color: var(--color-bg);
   padding: var(--space-lg);
   border-radius: 8px;
+  border: 1px solid var(--color-primary);
   transition: var(--transition-default);
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(26, 58, 82, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(26, 58, 82, 0.15);
 }
 
-.service-icon {
-  font-size: 2.5rem;
+.card-label {
+  color: var(--color-accent);
+  font-family: monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
   margin-bottom: var(--space-sm);
 }
 
-.service-card ul {
-  list-style: none;
-  margin-top: var(--space-sm);
+.card-desc {
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
 }
 
-.service-card li {
-  margin-bottom: var(--space-xs);
-  padding-left: 20px;
-  position: relative;
-  font-size: var(--text-caption);
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
 }
 
-.service-card li::before {
-  content: "•";
-  color: var(--color-accent);
-  position: absolute;
-  left: 0;
-  font-weight: bold;
+.card-tags span {
+  font-size: 0.8rem;
+  color: var(--color-mute);
+  background-color: rgba(26, 58, 82, 0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
 /* Achievements Section */
@@ -318,7 +336,7 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   .display { font-size: 2.2rem; }
-  .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .about-grid, .contact-grid, .services-grid { grid-template-columns: 1fr; }
   .hero { height: auto; padding: 150px 0 100px; }
   .nav-links { display: none; } /* Simplified for demo */
 }
