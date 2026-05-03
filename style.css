@@ -5,7 +5,7 @@
   /* Color Tokens */
   --color-primary: #1A3A52;
   --color-accent: #D4A017;
-  --color-bg: #FFFFFF;
+  --color-bg: #F5F1EA;
   --color-text: #1A1A1A;
   --color-mute: #6E6A63;
 
@@ -194,7 +194,7 @@ section {
   display: flex;
   align-items: center;
   padding-top: var(--space-xxl); /* offset for header */
-  background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+  background: linear-gradient(135deg, var(--color-bg) 0%, #e6dfce 100%);
 }
 
 .hero-content {
@@ -207,7 +207,8 @@ section {
 
 .hero p {
   font-size: var(--text-h2);
-  color: var(--color-mute);
+  color: var(--color-text);
+  opacity: 0.85;
   margin-bottom: var(--space-lg);
 }
 
@@ -243,10 +244,9 @@ section {
 }
 
 .service-card {
-  background-color: #ffffff;
+  background-color: var(--color-bg);
   padding: var(--space-lg);
   border-radius: 8px;
-  border: 1px solid #f0f4f8;
   transition: transform var(--transition-default), box-shadow var(--transition-default);
 }
 
@@ -263,7 +263,8 @@ section {
 
 .service-card ul {
   margin-top: var(--space-sm);
-  color: var(--color-mute);
+  color: var(--color-text);
+  opacity: 0.85;
 }
 
 .service-card ul li {
@@ -282,13 +283,13 @@ section {
 
 /* Achievements Section */
 .achievements {
-  background-color: #f0f4f8;
-  color: var(--color-text);
+  background-color: var(--color-primary);
+  color: #fff;
   text-align: center;
 }
 
 .achievements .title-h1 {
-  color: var(--color-primary);
+  color: #fff;
 }
 
 .stats-grid {
@@ -375,16 +376,14 @@ section {
 
 /* Footer */
 footer {
-  background-color: #f8f9fa;
-  color: var(--color-mute);
+  background-color: #112636;
+  color: rgba(255, 255, 255, 0.7);
   padding: var(--space-lg) 0;
   text-align: center;
-  border-top: 1px solid #eee;
 }
 
 footer p {
   margin-bottom: var(--space-xs);
-  color: var(--color-mute);
 }
 
 /* Animations */
