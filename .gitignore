@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# 에디터/IDE
+.vscode/
+.idea/
+*.swp
+
+# 환경변수 (혹시 생기면)
+.env
+.env.local
+
+# 로그
+*.log
+
+# 노드 모듈 (혹시 생기면)
+node_modules/

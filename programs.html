@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교육 프로그램 | 인베스트교육개발원 · (주)케이미디어센터</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A3A52'/%3E%3Ctext x='16' y='21.5' font-family='sans-serif' font-weight='bold' font-size='15' fill='%23D4A017' text-anchor='middle'%3EIK%3C/text%3E%3C/svg%3E">
+  
+  <!-- Fonts -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1A3A52',
+            accent: '#38BDF8',
+            secondary: '#A78BFA',
+            heading: '#F8FAFC',
+            text: '#CBD5E1',
+            bg: '#020108',
+            card: '#0F172A',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    :root {
+      --color-primary: #1A3A52;
+      --color-accent: #38BDF8;
+      --color-secondary: #A78BFA;
+      --color-bg: #020108;
+      --color-text: #CBD5E1;
+      --color-heading: #F8FAFC;
+    }
+
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateY(-5px);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .category-tab.active {
+      background: var(--color-accent);
+      color: var(--color-bg);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Cosmic Background */
+    .cosmic-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020108 100%);
+    }
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+  </style>
+</head>
+<body class="selection:bg-accent selection:text-bg">
+
+  <!-- Cosmic Background -->
+  <div class="cosmic-bg">
+    <div id="stars-container"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-card border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold text-heading tracking-wider hover:text-accent transition-all">
+        INBEST · K-MEDIA
+      </a>
+      <nav class="hidden md:flex gap-8 items-center">
+        <a href="index.html#about" class="text-sm font-semibold hover:text-accent transition-all">회사소개</a>
+        <a href="programs.html" class="text-sm font-semibold text-accent transition-all">교육 프로그램</a>
+        <a href="history.html" class="text-sm font-semibold hover:text-accent transition-all">연혁</a>
+        <a href="index.html#contact" class="px-6 py-2 bg-accent/10 border border-accent/30 text-accent rounded-full text-sm font-bold hover:bg-accent hover:text-bg transition-all">상담 문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-40 pb-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Page Title -->
+      <div class="text-center mb-16 reveal">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-heading mb-6 tracking-tight">교육 프로그램</h1>
+        <p class="text-xl text-text/80 break-keep max-w-3xl mx-auto">
+          AI 기술부터 진로 설계까지, 80여 개의 다채로운 교육 커리큘럼을 만나보세요.
+        </p>
+      </div>
+
+      <!-- Education Features Section (from Screenshot) -->
+      <div class="mb-32 reveal">
+        <p class="text-center text-text/60 text-sm mb-4">단순한 강의가 아닌, 직접 해보고 느끼는 체험 중심 교육</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-card p-8 rounded-3xl text-center">
+            <div class="text-4xl mb-4">🎯</div>
+            <h3 class="text-xl font-bold text-heading mb-3">체험형 교육</h3>
+            <p class="text-sm text-text/60 leading-relaxed">이론 강의에 그치지 않고 직접 만들고, 조작하고, 설계하는 핸즈온(Hands-on) 체험 중심 교육을 제공합니다.</p>
+          </div>
+          <div class="glass-card p-8 rounded-3xl text-center">
+            <div class="text-4xl mb-4">🏭</div>
+            <h3 class="text-xl font-bold text-heading mb-3">현직 전문가 멘토링</h3>
+            <p class="text-sm text-text/60 leading-relaxed">각 분야의 현직 전문 직업인이 직접 멘토로 참여하여 생생한 직업 현장 이야기를 전달합니다.</p>
+          </div>
+          <div class="glass-card p-8 rounded-3xl text-center">
+            <div class="text-4xl mb-4">🔮</div>
+            <h3 class="text-xl font-bold text-heading mb-3">신산업 연계 직업</h3>
+            <p class="text-sm text-text/60 leading-relaxed">미래 모빌리티, AI, 로봇공학 등 새롭게 떠오르는 신산업 분야의 직업을 선제적으로 탐구합니다.</p>
+          </div>
+          <div class="glass-card p-8 rounded-3xl text-center">
+            <div class="text-4xl mb-4">🎨</div>
+            <h3 class="text-xl font-bold text-heading mb-3">다양한 분야 커버</h3>
+            <p class="text-sm text-text/60 leading-relaxed">이공계부터 문화예술, 뷰티, 요리, 미디어까지 청소년의 다양한 관심사를 모두 다룹니다.</p>
+          </div>
+          <div class="glass-card p-8 rounded-3xl text-center">
+            <div class="text-4xl mb-4">📍</div>
+            <h3 class="text-xl font-bold text-heading mb-3">학교 방문 교육</h3>
+            <p class="text-sm text-text/60 leading-relaxed">장비와 강사가 학교로 직접 방문하여 이동 없이 학교 현장에서 양질의 진로 체험을 제공합니다.</p>
+          </div>
+          <div class="glass-card p-8 rounded-3xl text-center">
+            <div class="text-4xl mb-4">📋</div>
+            <h3 class="text-xl font-bold text-heading mb-3">맞춤형 프로그램</h3>
+            <p class="text-sm text-text/60 leading-relaxed">학교·기관의 요구에 맞게 프로그램을 조합하여 최적의 커리큘럼을 설계해드립니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education Process Section (from Screenshot) -->
+      <div class="mb-32 reveal">
+        <div class="text-center mb-16">
+          <span class="bg-accent/10 text-accent text-[10px] font-bold px-3 py-1 rounded-full border border-accent/20 tracking-widest uppercase mb-4 inline-block">Process</span>
+          <h2 class="text-4xl font-bold text-heading mt-4 mb-4">교육 진행 절차</h2>
+          <p class="text-text/60">문의부터 교육 완료까지 간편하게 진행됩니다</p>
+        </div>
+        <div class="relative">
+          <!-- Horizontal Line (Desktop) -->
+          <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-accent/20 via-accent/50 to-accent/20"></div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="relative text-center">
+              <div class="w-24 h-24 bg-primary border-4 border-accent rounded-full flex items-center justify-center text-3xl font-bold text-heading mx-auto mb-6 z-10 relative">1</div>
+              <h4 class="text-xl font-bold text-heading mb-2">교육 문의</h4>
+              <p class="text-xs text-text/50 leading-relaxed">전화, 이메일, 홈페이지 문의를 통해 교육 신청 및 상담을 시작합니다.</p>
+            </div>
+            <div class="relative text-center">
+              <div class="w-24 h-24 bg-primary border-4 border-accent/50 rounded-full flex items-center justify-center text-3xl font-bold text-heading mx-auto mb-6 z-10 relative">2</div>
+              <h4 class="text-xl font-bold text-heading mb-2">프로그램 협의</h4>
+              <p class="text-xs text-text/50 leading-relaxed">학교·기관 상황에 맞는 프로그램과 일정, 인원을 협의하고 확정합니다.</p>
+            </div>
+            <div class="relative text-center">
+              <div class="w-24 h-24 bg-primary border-4 border-accent/30 rounded-full flex items-center justify-center text-3xl font-bold text-heading mx-auto mb-6 z-10 relative">3</div>
+              <h4 class="text-xl font-bold text-heading mb-2">교육 준비</h4>
+              <p class="text-xs text-text/50 leading-relaxed">전문 강사 배정, 교육 자료 및 체험 키트 준비를 완료합니다.</p>
+            </div>
+            <div class="relative text-center">
+              <div class="w-24 h-24 bg-primary border-4 border-accent/10 rounded-full flex items-center justify-center text-3xl font-bold text-heading mx-auto mb-6 z-10 relative">4</div>
+              <h4 class="text-xl font-bold text-heading mb-2">교육 진행</h4>
+              <p class="text-xs text-text/50 leading-relaxed">현장 방문 또는 온라인으로 체험형 교육을 진행하고 결과물을 공유합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Filter -->
+      <div class="mb-12 reveal">
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3">
+          <button class="category-tab active px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all" data-category="all">전체</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="mobility">🏎️ 미래 모빌리티</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="robotics">🤖 로봇 & 에듀테크</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="ai-job">🧠 AI 차세대 직업</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="ai-startup">💡 AI & 창업</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="vision-maker">✨ 비전 메이커</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="medical">🩺 메디컬 직업</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="creator">🎬 크리에이터</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="career-design">📌 진로 설계</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="consulting">📈 진학 컨설팅</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="learning-coaching">📝 학습 코칭</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="pro-job">👔 전문 직업인</button>
+          <button class="category-tab px-4 py-2 rounded-full border border-white/10 text-xs md:text-sm font-bold transition-all flex items-center gap-2 hover:border-accent/50" data-category="humanities">🎨 인문·예술</button>
+        </div>
+      </div>
+
+      <!-- Programs Grid -->
+      <div id="programs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+        
+        <!-- 1. 미래 모빌리티 -->
+        <!-- 자율주행 컨테이너 선박 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="mobility">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🚢</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">미래 모빌리티</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">자율주행 컨테이너 선박</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">기술 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 스마트 해운과 무인 선박 기술</li>
+                <li>• GPS·레이더 기반 항로 제어</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 자율 항해 시나리오 설계</li>
+                <li>• 물류 이동 최적화 게임</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">해양IT 엔지니어</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">스마트 물류 전문가</span>
+          </div>
+        </div>
+
+        <!-- 수소자동차 전문가 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="mobility">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">💧</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">미래 모빌리티</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">수소자동차 전문가</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">기술 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 수소 연료전지 작동 원리</li>
+                <li>• 친환경 에너지와 탄소중립</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 수소 에너지 실험 키트 체험</li>
+                <li>• 미래 친환경 차량 설계</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">수소에너지 연구원</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">친환경차 엔지니어</span>
+          </div>
+        </div>
+
+        <!-- 직접 만들어 타는 전기차 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="mobility">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">⚡</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">미래 모빌리티</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">직접 만들어 타는 전기차</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">기술 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 전기차의 원리 (배터리·모터·충전 방식)</li>
+                <li>• 내연기관 자동차와의 차이</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 전기차 구조 모형 제작</li>
+                <li>• 간단한 주행 실험 및 에너지 효율 비교</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">전기차 개발 엔지니어</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">배터리 연구원</span>
+          </div>
+        </div>
+
+        <!-- 응급 구조 드론 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="mobility">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🚁</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">미래 모빌리티</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">응급 구조 드론</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">기술 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 드론의 비행 원리와 센서 역할</li>
+                <li>• 재난·응급 구조 현장 활용 사례</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 구조 드론 미션 설계</li>
+                <li>• 구조 물품 운반 시뮬레이션</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">드론 엔지니어</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">재난안전 기술자</span>
+          </div>
+        </div>
+
+        <!-- 미래 모빌리티 자율주행 자동차 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="mobility">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🤖</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">미래 모빌리티</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">미래 모빌리티 자율주행 자동차</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">기술 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 자율주행 단계 (Level 0~5)</li>
+                <li>• 카메라·라이다·AI 판단 구조</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 자율주행 미니카 코딩 및 주행 테스트</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">자율주행 SW 개발자</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">AI 엔지니어</span>
+          </div>
+        </div>
+
+
+        <!-- 2. 로봇 & 에듀테크 -->
+        <!-- 휴머노이드 로봇 제어 프로그램 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="robotics">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🤖</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">로봇 & 에듀테크</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">휴머노이드 로봇 제어 프로그램</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 아두이노 기반 로봇 제어 시스템 학습</li>
+                <li>• 센서·액추에이터 연결 및 기본 동작 구현</li>
+                <li>• 블루투스 앱 연동 및 블록코딩 활용</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">로봇 엔지니어</span>
+          </div>
+        </div>
+
+        <!-- 지능형 자동차 프로그램 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="robotics">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🏎️</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">로봇 & 에듀테크</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">지능형 자동차 프로그램</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 아두이노 자동차 기본 주행 구현</li>
+                <li>• 센서 활용 응용 및 원격 제어</li>
+                <li>• 창의적 자동차 프로젝트</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">자율주행 개발자</span>
+          </div>
+        </div>
+
+        <!-- DIY 코딩 드론 프로그램 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="robotics">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🚁</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">로봇 & 에듀테크</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">DIY 코딩 드론 프로그램</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 드론 이해와 조립</li>
+                <li>• 블록코딩 기초 → 드론 제어 기능 구현</li>
+                <li>• 응용 프로젝트 개발</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">드론 개발자</span>
+          </div>
+        </div>
+
+        <!-- DIY 스마트팜 프로그램 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="robotics">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🌱</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">로봇 & 에듀테크</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">DIY 스마트팜 프로그램</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 스마트팜 기초 이해 및 센서 시스템 구축</li>
+                <li>• 자동화 시스템 개발</li>
+                <li>• 통합 스마트팜 프로젝트</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">스마트팜 전문가</span>
+          </div>
+        </div>
+
+        <!-- DIY 스트로우 투석기 프로그램 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="robotics">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">⚙️</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">로봇 & 에듀테크</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">DIY 스트로우 투석기 프로그램</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 투석기 원리 이해 및 구조 설계</li>
+                <li>• 단계별 조립 및 제작 실습</li>
+                <li>• 발사 실험</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">기계 엔지니어</span>
+          </div>
+        </div>
+
+        <!-- DIY 원격 조향 자동차 프로그램 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="robotics">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🏎️</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">로봇 & 에듀테크</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">DIY 원격 조향 자동차 프로그램</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 동력 전달 시스템 구축</li>
+                <li>• 조향 메커니즘 개발</li>
+                <li>• 종합 원격 조향 프로젝트 실습</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">자동차 엔지니어</span>
+          </div>
+        </div>
+
+        <!-- 스크래치 아크릴 조명 만들기 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="robotics">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">💡</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">로봇 & 에듀테크</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">스크래치 아크릴 조명 만들기</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 크림의 빛 반사 성질 활용</li>
+                <li>• 나만의 아크릴 무드등 제작</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">광학 기술자</span>
+          </div>
+        </div>
+
+        <!-- LED 메시지팬 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="robotics">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">📺</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">로봇 & 에듀테크</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">LED 메시지팬</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 잔상 효과를 이용한 애니메이션 원리 이해</li>
+                <li>• 메시지팬의 글자 만드는 원리 탐구</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">전자 기술자</span>
+          </div>
+        </div>
+
+        <!-- 레이저쇼 프로젝트 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="robotics">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">✨</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">로봇 & 에듀테크</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">레이저쇼 프로젝트</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 레이저가 할 수 있는 다양한 퍼포먼스 체험</li>
+                <li>• 빛과 레이저로 나를 표현하는 예술 프로젝트</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">미디어 아티스트</span>
+          </div>
+        </div>
+
+        <!-- 플라잉 옥타곤 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="robotics">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🛸</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">로봇 & 에듀테크</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">플라잉 옥타곤</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 드론·비행기와의 차이점 이해</li>
+                <li>• 비행 원리와 적외선 센서 학습</li>
+                <li>• 충전식 재사용 비행체 조작 체험</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">항공 기술자</span>
+          </div>
+        </div>
+
+        <!-- 3. AI 차세대 직업 -->
+        <!-- 인공지능 전문가 - 휴머노이드 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🤖</span>
+            <span class="text-[10px] bg-warning/10 text-warning px-2 py-0.5 rounded border border-warning/20 font-bold">AI 차세대 직업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">인공지능 전문가 - 휴머노이드</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-warning mb-1">직업 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 인공지능 전문가와 휴머노이드 로봇의 역할</li>
+                <li>• 인식(AI 시각·음성)-판단·행동(로봇 제어) 구조</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-warning mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 휴머노이드 동작 제어 체험</li>
+                <li>• 사람과 로봇의 협업 미션 수행</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">AI 로봇 엔지니어</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">휴머노이드 연구원</span>
+          </div>
+        </div>
+
+        <!-- AI 과학 수사대 (CSI) -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🔍</span>
+            <span class="text-[10px] bg-warning/10 text-warning px-2 py-0.5 rounded border border-warning/20 font-bold">AI 차세대 직업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">AI 과학 수사대 (CSI)</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-warning mb-1">직업 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 과학수사관과 AI 분석가의 역할</li>
+                <li>• 얼굴·지문·패턴 인식 원리</li>
+                <li>• 데이터 분석을 통한 단서 추적</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-warning mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 가상 사건 해결 미션</li>
+                <li>• AI 기반 단서 분석 게임</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">디지털 포렌식 전문가</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">데이터 분석가</span>
+          </div>
+        </div>
+
+        <!-- AI 웹앱 개발자 (바이브 코딩) -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">💻</span>
+            <span class="text-[10px] bg-warning/10 text-warning px-2 py-0.5 rounded border border-warning/20 font-bold">AI 차세대 직업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">AI 웹앱 개발자 (바이브 코딩)</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-warning mb-1">직업 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• AI 웹·앱 개발자의 업무와 진로</li>
+                <li>• 웹앱 구조 (UI·서버·AI 기능)</li>
+                <li>• 생성형 AI 활용 개발 방식</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-warning mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 노코드·로우코드 도구로 AI 웹앱 제작</li>
+                <li>• 챗봇 또는 추천 기능 구현</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">AI 서비스 개발자</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">풀스택 개발자</span>
+          </div>
+        </div>
+
+        <!-- VR로 만나는 가상해부학 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🫁</span>
+            <span class="text-[10px] bg-warning/10 text-warning px-2 py-0.5 rounded border border-warning/20 font-bold">AI 차세대 직업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">VR로 만나는 가상해부학</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-warning mb-1">직업 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 의료·바이오 분야와 VR 기술의 결합</li>
+                <li>• 디지털 헬스케어 직업군 소개</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-warning mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• VR로 인체 내부 탐험</li>
+                <li>• 장기 구조와 기능 학습</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">의료 VR 콘텐츠 개발자</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">바이오엔지니어</span>
+          </div>
+        </div>
+
+        <!-- 4. AI & 창업 -->
+        <!-- AI 동화책 만들기 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">📖</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">AI 동화책 만들기</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 인공지능으로 동화책 콘티 짜기</li>
+                <li>• 그림 삽화 만들기, 스토리보드 대지 작성</li>
+                <li>• 출판 과정과 맞춤법 교정 체험</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고등 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">AI 콘텐츠 크리에이터</span>
+          </div>
+        </div>
+
+        <!-- 아이디어에서 시제품까지 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🚀</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">아이디어에서 시제품까지</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 발명 창업 자체개발 AI 앱 활용</li>
+                <li>• 팀 빌딩 아이스브레이킹 → 시제품 제작까지</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">스타트업 창업가</span>
+          </div>
+        </div>
+
+        <!-- 창의적 아이디어와 창업계획서 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">📋</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">창의적 아이디어와 창업계획서</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 브레인스토밍 → 시제품 제작 → 투자유치 발표</li>
+                <li>• 발명 창업 AI 앱 활용 팀 빌딩 활동</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">기업가 / 창직가</span>
+          </div>
+        </div>
+
+        <!-- AI 리터러시 프로그램 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🤖</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">AI 리터러시 프로그램</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• AI의 정의와 Suno로 나만의 음악 만들기</li>
+                <li>• ChatGPT 활용 조별 연극 제작</li>
+                <li>• AI로 다가올 미래 그려보기 실습</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">AI 전문가</span>
+          </div>
+        </div>
+
+        <!-- 바이브 코딩으로 창업 앱 만들기 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">📱</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">바이브 코딩으로 창업 앱 만들기</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 생활 속 문제를 해결하는 앱 아이디어 기획</li>
+                <li>• 화면 설계 · 기능 구현 · 발표까지</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">앱 개발자</span>
+          </div>
+        </div>
+
+        <!-- AI 작사작곡가 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎵</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">AI 작사작곡가</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• Suno AI로 나만의 응원가 제작</li>
+                <li>• 표지 이미지·제목 정해 유튜브 업로드까지</li>
+                <li>• 디지털 창작 전 과정 체험</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">음악 프로듀서</span>
+          </div>
+        </div>
+
+        <!-- AI 시화가 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🖼️</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">AI 시화가</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• AI와 함께 시를 쓰고 캔바로 편집</li>
+                <li>• 한 권의 시화집으로 완성하는 감성 창작 수업</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">디지털 작가</span>
+          </div>
+        </div>
+
+        <!-- 카드뉴스·썸네일 콘텐츠 메이커 챌린지 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">📰</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">카드뉴스·썸네일 콘텐츠 메이커 챌린지</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 하나의 주제로 카드뉴스와 썸네일 함께 제작</li>
+                <li>• 실전형 콘텐츠 디자인 수업</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">콘텐츠 디자이너</span>
+          </div>
+        </div>
+
+        <!-- SDGs 기아문제 해결 밀키트 시제품 개발 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🥗</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">SDGs 기아문제 해결 밀키트 시제품 개발</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• SDGs 의미와 목표 탐구</li>
+                <li>• 기후변화 인식 → 기아문제 해결 시제품 개발</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">사회적 기업가</span>
+          </div>
+        </div>
+
+        <!-- SDGs 환경문제 & 샴푸바 만들기 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">♻️</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">SDGs 환경문제 & 샴푸바 만들기</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 환경문제 이해 후 직접 샴푸바 제작</li>
+                <li>• 친환경 생활 실천 수업</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">환경 전문가</span>
+          </div>
+        </div>
+
+        <!-- SDGs 식수해결 4단 여과정수기 만들기 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">💧</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">SDGs 식수해결 4단 여과정수기 만들기</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 아프리카 식수 문제 이해</li>
+                <li>• 4단 여과정수기 직접 설계·제작</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">환경 엔지니어</span>
+          </div>
+        </div>
+
+        <!-- SDGs 생활안전 안전키링 메이킹 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🔐</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">SDGs 생활안전 안전키링 메이킹</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 빨간 셀로판 기법 제작</li>
+                <li>• 몰래카메라 체크 원리를 배우는 생활안전 체험</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">생활안전 전문가</span>
+          </div>
+        </div>
+
+        <!-- AI 홍보영상 제작 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="ai-startup">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎥</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">AI & 창업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">AI 홍보영상 제작</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 숏폼 기획·촬영·편집 전 과정 체험</li>
+                <li>• 틱톡·유튜브 쇼츠 업로드 흐름 익히기</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">초·중·고 전체</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">영상 크리에이터</span>
+          </div>
+        </div>
+
+        <!-- 5. 비전 메이커 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="vision-maker">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🔭</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">비전 메이커</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">우주 항공 전문가</h3>
+          <p class="text-sm text-text/60 mb-4 flex-grow leading-relaxed break-keep">로켓의 추진 원리와 인공위성 궤도를 이해하고, 미래 우주 식민지 건설을 위한 공학적 설계를 체험합니다.</p>
+          <div class="text-[11px] text-secondary/80 font-medium">#NASA #누리호 #우주공학</div>
+        </div>
+
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="vision-maker">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎮</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">비전 메이커</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">메타버스 플랫폼 기획</h3>
+          <p class="text-sm text-text/60 mb-4 flex-grow leading-relaxed break-keep">로블록스나 제페토 공간을 직접 구축하고, 가상 세계 안에서의 경제 활동과 커뮤니티를 설계합니다.</p>
+          <div class="text-[11px] text-secondary/80 font-medium">#제페토 #디지털트윈 #메타버스</div>
+        </div>
+
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="vision-maker">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🕶️</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">비전 메이커</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">VR/AR 콘텐츠 전문가</h3>
+          <p class="text-sm text-text/60 mb-4 flex-grow leading-relaxed break-keep">가상현실과 증강현실의 차이를 이해하고, 스마트폰으로 구현 가능한 AR 콘텐츠를 직접 제작합니다.</p>
+          <div class="text-[11px] text-secondary/80 font-medium">#가상현실 #증강현실 #몰입형기술</div>
+        </div>
+
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="vision-maker">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🏙️</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">비전 메이커</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">스마트시티 설계 전문가</h3>
+          <p class="text-sm text-text/60 mb-4 flex-grow leading-relaxed break-keep">IoT 센서와 데이터 분석 기술이 적용된 미래 도시의 효율적인 에너지 관리와 교통 시스템을 구상합니다.</p>
+          <div class="text-[11px] text-secondary/80 font-medium">#도시공학 #IoT #데이터사이언스</div>
+        </div>
+
+        <!-- 8. 진로 설계 -->
+        <!-- DREAM UP! 진로 탐색 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="career-design">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">⭐</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">진로 설계</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">DREAM UP! 진로 탐색</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-5차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 고등계열성향검사로 강점·직업 가치관 탐색</li>
+                <li>• 직업 세계·진학 학과 탐색</li>
+                <li>• 구체적 진로계획 수립 및 진로 로드맵 작성</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">진로 설계</span>
+          </div>
+        </div>
+
+        <!-- 학생부 로드맵 진로 설계 캠프 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="career-design">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🗺️</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">진로 설계</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">학생부 로드맵 진로 설계 캠프</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 변화하는 대입전형 분석</li>
+                <li>• 선배들의 합격 사례 미리보기</li>
+                <li>• 학생부 점검과 로드맵 작성</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">진학 설계</span>
+          </div>
+        </div>
+
+        <!-- 계열별 학업설계 전환기 캠프 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="career-design">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🔄</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">진로 설계</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">계열별 학업설계 전환기 캠프</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 나의 진로방향 워크시트 작성</li>
+                <li>• 나의 강점 이해하기</li>
+                <li>• 중학생활 끝판왕 워크북 작성</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">계열 탐색</span>
+          </div>
+        </div>
+
+        <!-- 고교학점제 교과 박람회 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="career-design">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🏛️</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">진로 설계</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">고교학점제 교과 박람회</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1회]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 희망 계열 사전 선택 (인문·사회·자연·공학·예체능 등)</li>
+                <li>• 진로체험 부스, 입학사정관 상담</li>
+                <li>• 세일 부스 박람회 진행</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">고교학점제</span>
+          </div>
+        </div>
+
+        <!-- SKY 탐방 심층 진로 캠프 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="career-design">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎓</span>
+            <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded border border-secondary/20 font-bold">진로 설계</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">SKY 탐방 심층 진로 캠프</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-secondary mb-1">프로그램 내용 [1회]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 최고 수준 대학 환경 직접 경험</li>
+                <li>• 캠퍼스 투어·교수 특강·멘토링·입시 강의</li>
+                <li>• 학습 계획 수립·자기소개서·면접 준비 실전 역량 강화</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">대입 동기부여</span>
+          </div>
+        </div>
+
+        <!-- 9. 진학 컨설팅 -->
+        <!-- 명품 학생부 구축 전략 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="consulting">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">📗</span>
+            <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded border border-primary/20 font-bold">진학 컨설팅</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">명품 학생부 구축 전략</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-primary mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 생성형 AI(에어팀스) 활용 융합과제탐구 구체화</li>
+                <li>• 계획서 작성 및 발표</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">학생부 전략</span>
+          </div>
+        </div>
+
+        <!-- 1:1 맞춤형 입시진학 컨설팅 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="consulting">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">👨‍💼</span>
+            <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded border border-primary/20 font-bold">진학 컨설팅</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">1:1 맞춤형 입시진학 컨설팅</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-primary mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 1:1 개인 맞춤형 교과연계 학생부 활동 탐색</li>
+                <li>• 진학사·이로리 등 참고 컨설팅</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">입시 컨설팅</span>
+          </div>
+        </div>
+
+        <!-- 독서세특 학생부 경쟁력 강화 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="consulting">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">📚</span>
+            <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded border border-primary/20 font-bold">진학 컨설팅</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">독서세특 학생부 경쟁력 강화</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-primary mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 독서 주제에서의 문제점 소개</li>
+                <li>• 찬성·반대 의견 피력</li>
+                <li>• 독서세특 보고서 작성과 발표</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">학생부 세특</span>
+          </div>
+        </div>
+
+        <!-- ON AIR 합격 면접 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="consulting">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎙️</span>
+            <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded border border-primary/20 font-bold">진학 컨설팅</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">ON AIR 합격 면접</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-primary mb-1">프로그램 내용 [2차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 합격면접 검사로 나의 학생부 강점 찾기</li>
+                <li>• 선배들의 합격 사례 분석</li>
+                <li>• 실제 면접 실습 진행</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">면접 대비</span>
+          </div>
+        </div>
+
+        <!-- Dream Builder – 예비 고1 학생부 컨설팅 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="consulting">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🔑</span>
+            <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded border border-primary/20 font-bold">진학 컨설팅</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">Dream Builder – 예비 고1 학생부 컨설팅</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-primary mb-1">프로그램 내용 [1-6차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 학생부 로드맵 검사 활용 1:1 맞춤형 탐색</li>
+                <li>• 교과연계 학생부 활동 컨설팅</li>
+                <li>• 나만의 학생부 로드맵 작성하기</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">예비 고1 전략</span>
+          </div>
+        </div>
+
+        <!-- 10. 학습 코칭 -->
+        <!-- 슬기로운 고등학교생활 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="learning-coaching">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🏫</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">학습 코칭</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">슬기로운 고등학교생활</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 합격 교과선택 검사로 계열 파악</li>
+                <li>• 학교 교육과정 편제표 활용 학습 공부법</li>
+                <li>• 나만의 시간관리 학습 전략</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">학습 전략</span>
+          </div>
+        </div>
+
+        <!-- 슬기로운 중학생활 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="learning-coaching">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">📖</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">학습 코칭</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">슬기로운 중학생활</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 나의 공부 성향 파악</li>
+                <li>• 나에게 맞는 학습법 탐색</li>
+                <li>• 자기주도학습 계획 준비 전략</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">자기주도 학습</span>
+          </div>
+        </div>
+
+        <!-- 미래인재 육성 두드림 자기주도학습 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="learning-coaching">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎯</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">학습 코칭</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">미래인재 육성 두드림 자기주도학습</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-4차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 중학공부끝판왕 / 고입&대입가이드 검사 활용</li>
+                <li>• 나의 공부법 진단과 성향 파악</li>
+                <li>• 과목별 공부법 파헤치기</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">중·고등 1-3학년</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">학습 역량</span>
+          </div>
+        </div>
+
+        <!-- 미리 보는 대입전형 (학부모 특강) -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="learning-coaching">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">👨‍👩‍👧</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">학습 코칭</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">미리 보는 대입전형 (학부모 특강)</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1-2차시]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 2022 개정 교육과정 변화 이해</li>
+                <li>• 2028 미리 보는 고교학점제 특강</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">학부모 대상</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">입시 정보</span>
+          </div>
+        </div>
+
+        <!-- 자기주도적 진로코칭 (교사 연수) -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="learning-coaching">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">👩‍🏫</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">학습 코칭</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">자기주도적 진로코칭 (교사 연수)</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">프로그램 내용 [1회]</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 진로 역량 개발을 위한 메타인지 학습의 원리 특강</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">교사 대상</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">교원 역량</span>
+          </div>
+        </div>
+
+        <!-- 6. 메디컬 직업 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="medical">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🩺</span>
+            <span class="text-[10px] bg-warning/10 text-warning px-2 py-0.5 rounded border border-warning/20 font-bold">메디컬 직업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">종합 의료 전문직 체험</h3>
+          <p class="text-sm text-text/60 mb-4 flex-grow leading-relaxed break-keep">의사, 간호사, 약사 등 병원 내 주요 직무의 역할을 이해하고 청진기, 혈압계 등 실제 도구를 다뤄봅니다.</p>
+          <div class="text-[11px] text-warning/80 font-medium">#의료윤리 #보건계열 #직업체험</div>
+        </div>
+
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="medical">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🧠</span>
+            <span class="text-[10px] bg-warning/10 text-warning px-2 py-0.5 rounded border border-warning/20 font-bold">메디컬 직업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">뇌과학 및 심리 상담사</h3>
+          <p class="text-sm text-text/60 mb-4 flex-grow leading-relaxed break-keep">인간의 뇌 구조와 심리적 메커니즘을 탐구하고, AI 기반의 심리 상담 도구를 활용한 케어 기법을 실습합니다.</p>
+          <div class="text-[11px] text-warning/80 font-medium">#뉴로사이언스 #심리학 #멘탈케어</div>
+        </div>
+
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="medical">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">💊</span>
+            <span class="text-[10px] bg-warning/10 text-warning px-2 py-0.5 rounded border border-warning/20 font-bold">메디컬 직업</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">바이오 제약 및 백신 연구</h3>
+          <p class="text-sm text-text/60 mb-4 flex-grow leading-relaxed break-keep">신약 개발의 단계와 백신의 중요성을 배우고, 생명 공학 기술이 질병 치료에 어떻게 활용되는지 체험합니다.</p>
+          <div class="text-[11px] text-warning/80 font-medium">#K-바이오 #제약공학 #백신개발</div>
+        </div>
+
+        <!-- 7. 크리에이터 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="creator">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎬</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">크리에이터</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">유튜브 영상 편집 전문가</h3>
+          <p class="text-sm text-text/60 mb-4 flex-grow leading-relaxed break-keep">기획, 촬영, 편집의 3단계를 거쳐 시선을 사로잡는 숏폼이나 브이로그 영상을 직접 완성합니다.</p>
+          <div class="text-[11px] text-accent/80 font-medium">#숏폼제작 #컷편집 #채널기획</div>
+        </div>
+
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="creator">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">💄</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">크리에이터</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">뷰티 & 퍼스널 컬러 코디네이터</h3>
+          <p class="text-sm text-text/60 mb-4 flex-grow leading-relaxed break-keep">개인의 매력을 높여주는 퍼스널 컬러를 진단하고, 이에 맞는 메이크업과 스타일링 기법을 배웁니다.</p>
+          <div class="text-[11px] text-accent/80 font-medium">#K-뷰티 #이미지메이킹 #컬러진단</div>
+        </div>
+
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="creator">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🍳</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">크리에이터</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">K-푸드 셰프 및 푸드 스타일리스트</h3>
+          <p class="text-sm text-text/60 mb-4 flex-grow leading-relaxed break-keep">전통과 현대가 만나는 K-푸드를 조리하고, 음식의 가치를 높여주는 플레이팅 및 연출 기법을 익힙니다.</p>
+          <div class="text-[11px] text-accent/80 font-medium">#조리학과 #푸드스타일링 #창업메뉴</div>
+        </div>
+
+
+
+        <!-- 7. 전문 직업인 -->
+        <!-- 메이크업 아티스트 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="pro-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">💄</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">전문 직업인</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">메이크업 아티스트 – 다이소 제품으로만 화장하기</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">직업 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 메이크업 아티스트의 역할과 활동 분야</li>
+                <li>• 관련 학과 및 자격증 알아보기</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 나의 얼굴형·피부톤 이해하기</li>
+                <li>• 다이소 화장품만 활용한 기초 메이크업 실습</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">메이크업 아티스트</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">뷰티 크리에이터</span>
+          </div>
+        </div>
+
+        <!-- 네일 아트 크리에이터 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="pro-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">💅</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">전문 직업인</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">트렌드를 디자인하다, 네일 아트 크리에이터</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">직업 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 네일 아티스트의 역할과 취업·창업 분야</li>
+                <li>• 위생과 안전의 중요성 알아보기</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 다양한 네일 아트 디자인 사례 탐색</li>
+                <li>• 네일 아트 팁(연습용 손톱) 제작 실습</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">네일 아티스트</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">뷰티 크리에이터</span>
+          </div>
+        </div>
+
+        <!-- 로컬 퍼퓸 랩 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="pro-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🌸</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">전문 직업인</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">향기로 기록하는 우리 동네, 로컬 퍼퓸 랩</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">직업 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 조향사의 역할과 향을 만드는 과정</li>
+                <li>• 화장품 개발자, 브랜드 마케터 등 연계 직업</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 향의 기본 노트 (탑·미들·베이스) 이해</li>
+                <li>• 지역 특성을 주제로 한 로컬 향수 블렌딩</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">조향사</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">브랜드 마케터</span>
+          </div>
+        </div>
+
+        <!-- 푸드스타일링 스튜디오 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="pro-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🍽️</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">전문 직업인</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">보이는 맛의 기술, 푸드스타일링 스튜디오</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">직업 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 푸드스타일리스트의 역할</li>
+                <li>• 영화·광고·잡지에 등장하는 음식 연출 과정 이해</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 식품 조리 기초와 스타일링 포인트 배우기</li>
+                <li>• 음식 사진 촬영 기초 (구도·빛·색감)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">푸드스타일리스트</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">음식 포토그래퍼</span>
+          </div>
+        </div>
+
+        <!-- 스마트 밀키트 연구소 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="pro-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🍱</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">전문 직업인</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">한 끼를 설계하다, 스마트 밀키트 연구소</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">기술·지식 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 레시피 기획, 원가·영양 균형 개념</li>
+                <li>• 식품 안전과 위생</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 간편 조리 밀키트 메뉴 기획</li>
+                <li>• 패키지 구성 및 설명서 제작</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">식품 R&D 연구원</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">푸드기획자</span>
+          </div>
+        </div>
+
+        <!-- K-FOOD 시대 – 흑백 조리사 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="pro-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🍜</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">전문 직업인</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">K-FOOD 시대 – 흑백 조리사</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">직업 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 한식 세계화와 퓨전 요리 트렌드</li>
+                <li>• 한식 퓨전 개발자의 역할</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 한식 재료를 활용한 퓨전 메뉴 기획</li>
+                <li>• 음식 콘셉트 및 스토리텔링 만들기</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">푸드 크리에이터</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">외식 브랜드 개발자</span>
+          </div>
+        </div>
+
+        <!-- 인테리어 디자이너 스튜디오 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="pro-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🏠</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">전문 직업인</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">공간을 바꾸는 힘, 인테리어 디자이너 스튜디오</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">직업 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 실내인테리어 디자이너의 업무</li>
+                <li>• 주거·상업 공간 디자인 사례</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 공간 콘셉트 보드 제작</li>
+                <li>• 나만의 방 인테리어 설계</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">인테리어 디자이너</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">공간 디렉터</span>
+          </div>
+        </div>
+
+        <!-- 3D 한옥 메이커스 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="pro-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🏯</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">전문 직업인</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">전통을 짓다, 3D 한옥 메이커스</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">기술·지식 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 한옥의 기둥·보·지붕 구조</li>
+                <li>• 3D 모델링 기초 개념</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 3D 도구로 한옥 구조 설계</li>
+                <li>• 전통과 현대의 결합 아이디어 제시</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">건축가</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">3D 공간 디자이너</span>
+          </div>
+        </div>
+
+        <!-- 디지털 드로잉 작가 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="pro-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎨</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">전문 직업인</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">웹툰·이모티콘의 시작, 디지털 드로잉 작가</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">기술·지식 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 태블릿 드로잉 기초</li>
+                <li>• 색감·레이어 활용법</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 나만의 캐릭터 또는 작품 제작</li>
+                <li>• 디지털 작품 전시 기획</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">일러스트레이터</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">콘텐츠 아티스트</span>
+          </div>
+        </div>
+
+        <!-- 숏폼 영상 크리에이터 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="pro-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎬</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">전문 직업인</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">30초로 말하다, 숏폼 영상 크리에이터</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">직업 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 영상 촬영 및 편집자의 역할</li>
+                <li>• 유튜브·숏폼·광고·방송·SNS 콘텐츠</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 스마트폰을 활용한 영상 촬영 실습</li>
+                <li>• 기본 촬영 기법 실습 (앵글, 구도, 컷 분할)</li>
+                <li>• 간단한 편집 도구를 활용한 영상 편집</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">영상 크리에이터</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">콘텐츠 프로듀서</span>
+          </div>
+        </div>
+
+        <!-- 신재생에너지 개발자 -->
+        <div class="program-card glass-card p-6 rounded-2xl flex flex-col" data-category="pro-job">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">⚡</span>
+            <span class="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold">전문 직업인</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3">신재생에너지 개발자</h3>
+          <div class="space-y-4 mb-4 flex-grow">
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">기술 이해</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 태양광·풍력·수소 에너지 원리</li>
+                <li>• 에너지 저장 시스템 이해</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-accent mb-1">체험 활동</p>
+              <ul class="text-xs text-text/60 space-y-1">
+                <li>• 친환경 에너지 발전 실험</li>
+                <li>• 미래 도시 에너지 설계 프로젝트</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">에너지 연구원</span>
+            <span class="text-[10px] bg-white/5 text-text/70 px-2 py-1 rounded">친환경 기술 엔지니어</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- AI Story Workshop Special Banner -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="glass-card p-8 md:p-16 rounded-[40px] flex flex-col md:flex-row items-center gap-12 reveal border border-white/20 bg-gradient-to-br from-primary/40 to-secondary/20">
+        <div class="flex-1 text-center md:text-left">
+          <div class="inline-block px-4 py-1 bg-accent text-primary text-xs font-bold rounded-full mb-6">SPECIAL HIGHLIGHT</div>
+          <h2 class="text-4xl md:text-5xl font-bold text-heading mb-6 leading-tight">AI 스토리 공작소</h2>
+          <p class="text-lg text-text/80 font-normal mb-8 break-keep">
+            상상이 현실이 되는 곳, 생성형 AI를 활용한 나만의 동화책 만들기.<br>
+            <span class="text-accent font-bold">60여 명의 AI 동화책 작가</span>가 탄생한 검증된 창작 플랫폼입니다.
+          </p>
+          <div class="flex flex-wrap justify-center md:justify-start gap-4">
+            <div class="flex items-center gap-3 text-text/90 bg-white/5 px-6 py-3 rounded-2xl border border-white/10">
+              <span class="text-2xl">✍️</span>
+              <span class="font-bold">작가 양성 과정</span>
+            </div>
+            <div class="flex items-center gap-3 text-text/90 bg-white/5 px-6 py-3 rounded-2xl border border-white/10">
+              <span class="text-2xl">📚</span>
+              <span class="font-bold">종이책/ 전자책 출판 지원</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 w-full md:w-80 aspect-square bg-gradient-to-br from-accent/20 to-secondary/20 rounded-3xl border border-white/20 flex items-center justify-center p-8 relative group">
+           <div class="absolute inset-0 flex items-center justify-center opacity-40 group-hover:scale-110 transition-all duration-500">
+             <span class="text-9xl text-accent">✨</span>
+           </div>
+           <p class="text-3xl font-bold text-accent text-center drop-shadow-lg z-10 leading-tight">AI<br>Story<br>Workshop</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-card/50 backdrop-blur-xl border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="text-center md:text-left">
+        <div class="text-xl font-bold text-heading mb-2">INBEST · K-MEDIA</div>
+        <p class="text-xs text-text/50">© 2026 Inbest Education & K-Media Center. All rights reserved.</p>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-sm text-text/70 hover:text-accent transition-all">메인으로</a>
+        <a href="history.html" class="text-sm text-text/70 hover:text-accent transition-all">연혁보기</a>
+        <a href="index.html#contact" class="text-sm text-text/70 hover:text-accent transition-all">문의하기</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Star animation
+    const container = document.getElementById('stars-container');
+    const starCount = 150;
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      const size = Math.random() * 2;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.animationDelay = `${Math.random() * 5}s`;
+      container.appendChild(star);
+    }
+
+    // Filter Logic
+    const tabs = document.querySelectorAll('.category-tab');
+    const cards = document.querySelectorAll('.program-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Update tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Filter cards
+        const category = tab.getAttribute('data-category');
+        cards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+            setTimeout(() => card.style.opacity = '1', 10);
+          } else {
+            card.style.opacity = '0';
+            setTimeout(() => card.style.display = 'none', 300);
+          }
+        });
+      });
+    });
+
+    // Scroll Reveal
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
