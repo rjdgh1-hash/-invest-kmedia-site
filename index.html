@@ -3,547 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1A3A52">
-  
-  <!-- Basic Meta -->
-  <title>인베스트교육개발원 · 주식회사 케이미디어센터</title>
-  <meta name="description" content="교육과 미디어가 만나 사람과 기회를 잇습니다. AI 기반 교육-취업 연계 플랫폼.">
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="인베스트교육개발원 · 주식회사 케이미디어센터">
-  <meta property="og:description" content="교육과 미디어가 만나 사람과 기회를 잇습니다. AI 기반 교육-취업 연계 플랫폼.">
-  <meta property="og:image" content="assets/images/og-image.jpg">
-  <meta property="og:url" content="https://www.ik-media.com">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="인베스트교육개발원 · 주식회사 케이미디어센터">
-  <meta name="twitter:description" content="교육과 미디어가 만나 사람과 기회를 잇습니다. AI 기반 교육-취업 연계 플랫폼.">
-  <meta name="twitter:image" content="assets/images/og-image.jpg">
-
-  <!-- Favicon (Inline SVG) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A3A52'/%3E%3Ctext x='16' y='21.5' font-family='sans-serif' font-weight='bold' font-size='15' fill='%23D4A017' text-anchor='middle'%3EIK%3C/text%3E%3C/svg%3E">
-  
-  <!-- Fonts -->
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          textColor: {
-            primary: 'var(--color-heading)',
-            accent: 'var(--color-accent)',
-            secondary: 'var(--color-secondary)',
-            bg: 'var(--color-text)',
-            text: 'var(--color-text)',
-            mute: 'var(--color-mute)',
-            warning: 'var(--color-warning)',
-          },
-          backgroundColor: {
-            primary: 'var(--color-primary)',
-            accent: 'var(--color-accent)',
-            secondary: 'var(--color-secondary)',
-            bg: 'var(--color-bg)',
-            text: 'var(--color-text)',
-          },
-          borderColor: {
-            primary: 'rgba(255, 255, 255, 0.15)',
-            accent: 'var(--color-accent)',
-            secondary: 'var(--color-secondary)',
-            bg: 'var(--color-bg)',
-            warning: 'var(--color-warning)',
-          },
-          fill: {
-            primary: 'var(--color-primary)',
-            accent: 'var(--color-accent)',
-            secondary: 'var(--color-secondary)',
-            bg: 'var(--color-text)',
-          },
-          spacing: {
-            'xs': 'var(--space-xs)',
-            'sm': 'var(--space-sm)',
-            'md': 'var(--space-md)',
-            'lg': 'var(--space-lg)',
-            'xl': 'var(--space-xl)',
-            'xxl': 'var(--space-xxl)',
-          }
-        },
-        screens: {
-          'md': '481px',
-          'lg': '1025px',
-        }
-      }
-    }
-  </script>
-  
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css?v=7">
+  <title>인베스트교육개발원 & 케이미디어센터</title>
+  <meta name="description" content="교육과 미디어가 만나 사람과 기회를 잇습니다. AI 기반 교육-취업 연계 플랫폼">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-bg text-text overflow-x-hidden w-full selection:bg-accent selection:text-bg">
-  
-  <!-- Skip Link for Accessibility -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-bg px-4 py-2 z-[100] rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-accent font-bold">본문 바로가기</a>
+<body>
 
-  <!-- Header Section -->
-  <header id="header" class="fixed top-0 left-0 w-full z-50 transition-default">
-    <!-- Top Utility Bar -->
-    <div class="w-full bg-primary text-bg py-1 hidden lg:block shadow-md">
-      <div class="max-w-[1280px] mx-auto px-md flex justify-start items-center gap-md caption tracking-widest font-bold opacity-90">
-        <a href="#" class="hover:text-accent transition-default">INBEST EDU</a>
-        <span class="opacity-50">|</span>
-        <a href="#" class="hover:text-accent transition-default">K-MEDIA CENTER</a>
-      </div>
-    </div>
-    
-    <!-- Main Header -->
-    <div id="main-header" class="w-full bg-bg/95 backdrop-blur-md border-b border-bg/10 transition-shadow duration-300">
-      <div class="max-w-[1280px] mx-auto px-md py-sm flex items-center justify-between">
-        <!-- Logo Image/Text -->
-        <a href="#" class="h2 text-primary hover:text-accent transition-default tracking-wider font-bold">
-          INBEST · K-MEDIA
-        </a>
-      
-      <!-- Desktop Nav -->
-      <nav id="desktop-nav" class="hidden lg:flex items-center gap-lg">
-        <a href="#about" class="nav-link body font-bold text-text hover:text-accent transition-default">회사소개</a>
-        <a href="programs.html" class="nav-link body font-bold text-text hover:text-accent transition-default">교육 프로그램</a>
-        <a href="history.html" class="nav-link body font-bold text-text hover:text-accent transition-default">연혁</a>
-        <a href="#contact" class="nav-link body font-bold text-text hover:text-accent transition-default">문의</a>
-        <a href="#" class="body font-bold text-text hover:text-accent transition-default pl-lg border-l border-text/30">EN</a>
-        <a href="#contact" class="btn-primary body px-lg py-sm rounded-full shadow-md hover:shadow-lg">무료 상담</a>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="logo">Invest & K-Media</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact" class="btn">Contact Us</a>
       </nav>
-
-      <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" aria-label="모바일 메뉴 열기" class="lg:hidden text-primary p-xs relative z-50 transition-default">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="hamburger-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-      </button>
-      </div>
     </div>
-
-    <!-- Mobile Menu Overlay -->
-    <nav id="mobile-menu" class="fixed inset-0 bg-bg/95 backdrop-blur-md z-40 flex flex-col items-center justify-center gap-xl opacity-0 pointer-events-none transition-default lg:hidden">
-      <a href="#about" class="mobile-link h1 text-primary hover:text-accent">회사소개</a>
-      <a href="programs.html" class="mobile-link h1 text-primary hover:text-accent">교육 프로그램</a>
-      <a href="history.html" class="mobile-link h1 text-primary hover:text-accent">연혁</a>
-      <a href="#contact" class="mobile-link h1 text-primary hover:text-accent">문의</a>
-      <a href="#" class="mobile-link h1 text-primary hover:text-accent">EN</a>
-      <a href="#contact" class="mobile-link btn-primary h2 px-xl py-sm rounded-full mt-md">무료 상담</a>
-    </nav>
   </header>
 
-  <main id="main-content">
   <!-- Hero Section -->
-  <section id="hero" class="bg-primary min-h-[90vh] flex items-center pt-[140px] pb-xl relative overflow-hidden">
-    <!-- Cosmic Glowing Background Effects -->
-    <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[120px] pointer-events-none -translate-x-1/4 -translate-y-1/4"></div>
-    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary/20 rounded-full blur-[150px] pointer-events-none translate-x-1/4 -translate-y-1/4"></div>
-
-    <div class="max-w-[1024px] mx-auto px-md w-full flex flex-col items-center justify-center text-center relative z-10 pt-xl">
-      
-      <!-- Top Center: Text Content -->
-      <div class="space-y-xl flex flex-col items-center w-full">
-        <div class="space-y-md flex flex-col items-center">
-          <!-- Badge -->
-          <div class="inline-block px-sm py-xs border border-warning rounded-full text-warning caption font-bold tracking-widest animate-fade-in-up bg-bg/50 backdrop-blur-sm">
-            ✨ 인베스트교육개발원 & (주) 케이미디어센터
-          </div>
-          
-          <h1 class="display text-heading leading-tight animate-fade-in-up delay-100 tracking-tight font-extrabold drop-shadow-2xl">
-            학생의 성장을<br>
-            <span class="text-accent">함께 설계하는</span><br>
-            진로·진학 교육
-          </h1>
-          
-          <p class="body font-normal text-[18px] text-white/90 leading-relaxed animate-fade-in-up delay-200 break-keep max-w-2xl mx-auto">
-            인베스트교육개발원과 (주)케이미디어센터는 진로·AI·취업캠프부터<br>
-            고교학점제·생성형 AI·학생부 관리까지,<br>
-            <strong class="text-accent">학교 현장과 함께 성장하는 교육 전문 기관</strong>입니다.
-          </p>
-        </div>
-        
-        <div class="flex flex-col md:flex-row justify-center gap-sm md:gap-md pt-sm animate-fade-in-up delay-300 w-full md:w-auto">
-          <a href="programs.html" class="btn-primary body px-xl py-md rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-default text-center w-full md:w-auto">
-            프로그램 살펴보기
-          </a>
-          <a href="#contact" class="btn-outline body px-xl py-md rounded-full text-center hover:-translate-y-1 transition-default w-full md:w-auto">
-            교육 문의하기
-          </a>
-        </div>
-
-        <!-- Stats Row -->
-        <div class="pt-lg mt-lg border-t border-bg/10 grid grid-cols-2 lg:grid-cols-4 gap-lg md:gap-xl animate-fade-in-up delay-400 w-full max-w-4xl mx-auto">
-          <div class="text-center">
-            <p class="h1 font-serif text-bg mb-xs">2019</p>
-            <p class="caption text-bg/60">인베스트 설립</p>
-          </div>
-          <div class="text-center">
-            <p class="h1 font-serif text-bg mb-xs">800<span class="text-accent">+</span></p>
-            <p class="caption text-bg/60">학교·기관 교육 운영</p>
-          </div>
-          <div class="text-center">
-            <p class="h1 font-serif text-bg mb-xs">2만</p>
-            <p class="caption text-bg/60">교사 봉사 네트워크</p>
-          </div>
-          <div class="text-center">
-            <p class="h1 font-serif text-bg mb-xs">80<span class="text-accent">+</span></p>
-            <p class="caption text-bg/60">체험 교육 프로그램</p>
-          </div>
-        </div>
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content fade-in-up">
+        <h1 class="display">교육과 미디어가 만나<br>사람과 기회를 잇습니다</h1>
+        <p>인베스트교육개발원과 주식회사 케이미디어센터가 함께 만드는<br>AI 기반 교육-취업 연계 플랫폼</p>
+        <a href="#services" class="btn">핵심 역량 알아보기</a>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-xxl relative overflow-hidden">
-    <div class="max-w-[1280px] mx-auto px-md relative z-10 reveal">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl items-center">
-        <div class="lg:col-span-7">
-          <span class="badge mb-md">ABOUT US</span>
-          <h2 class="display text-primary mb-lg">진로부터 취업까지,<br><span class="text-accent">학교 현장과 함께</span> 성장합니다</h2>
-          <p class="body text-mute mb-md opacity-80 break-keep">
-            2019년 설립된 교육 전문 기관으로, 사단법인 가르치는사람들(2017년 설립, 서울시교육청 제258호)과 함께 학교·공공기관 800여 곳에서 진로·진학·미래학습 캠프를 운영합니다.
-          </p>
-          <p class="body text-mute mb-lg opacity-80 break-keep">
-            2026년에는 (주)케이미디어센터를 설립하여 체험형 직업교육 콘텐츠까지 확장하였으며, 서울시교육청 교육후견인제 및 성동ESG 공모사업 등에 선정되어 지역사회 교육 생태계 구축에 앞장서고 있습니다.
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-md mt-xl">
-            <div class="flex items-center gap-sm">
-              <span class="text-accent">✔</span>
-              <span class="caption text-mute font-bold">학교·기관 800곳 이상 운영</span>
-            </div>
-            <div class="flex items-center gap-sm">
-              <span class="text-accent">✔</span>
-              <span class="caption text-mute font-bold">교사 네트워크 2만 명</span>
-            </div>
-            <div class="flex items-center gap-sm">
-              <span class="text-accent">✔</span>
-              <span class="caption text-mute font-bold">강사 양성과정 매년 50명</span>
-            </div>
-            <div class="flex items-center gap-sm">
-              <span class="text-accent">✔</span>
-              <span class="caption text-mute font-bold">정부지원 사업 컨설팅</span>
-            </div>
-          </div>
-        </div>
-        <div class="lg:col-span-5 grid grid-cols-2 gap-md">
-          <div class="glass-card p-lg border-accent/20 bg-white/5">
-            <div class="text-3xl mb-sm">🎯</div>
-            <h4 class="h2 text-primary mb-xs">고교학점제</h4>
-            <p class="caption text-mute/70">개별 최적화 과목 선택 전략</p>
-          </div>
-          <div class="glass-card p-lg border-accent/20 bg-white/5">
-            <div class="text-3xl mb-sm">🤖</div>
-            <h4 class="h2 text-primary mb-xs">생성형 AI</h4>
-            <p class="caption text-mute/70">AI 기반 과제탐구 및 체험</p>
-          </div>
-          <div class="glass-card p-lg border-accent/20 bg-white/5">
-            <div class="text-3xl mb-sm">📋</div>
-            <h4 class="h2 text-primary mb-xs">학생부 관리</h4>
-            <p class="caption text-mute/70">최강 학생부 설계 전략</p>
-          </div>
-          <div class="glass-card p-lg border-accent/20 bg-white/5">
-            <div class="text-3xl mb-sm">🏭</div>
-            <h4 class="h2 text-primary mb-xs">취업 캠프</h4>
-            <p class="caption text-mute/70">특성화고 취업 연계 지원</p>
-          </div>
-        </div>
+  <section id="about" class="container">
+    <h2 class="title-h1 fade-in-up">About Us</h2>
+    <div class="about-grid fade-in-up">
+      <div class="about-text">
+        <h3 class="title-h2 text-accent">두 가지 전문성의 결합</h3>
+        <p><strong>인베스트교육개발원</strong>은 오랜 기간 축적된 교육 연구 및 개발 노하우를 바탕으로 최적화된 맞춤형 교육 솔루션을 제공합니다.</p>
+        <p><strong>주식회사 케이미디어센터</strong>는 최신 AI 기술과 미디어 플랫폼 역량을 결합하여, 교육의 가치를 디지털 세계로 확장하고 혁신적인 취업 매칭을 구현합니다.</p>
+        <p class="text-mute">설립일: 2019.09.17 | 대표자: 임은정</p>
+      </div>
+      <div class="about-card">
+        <h3 class="title-h2">우리의 비전</h3>
+        <p class="text-mute">현장의 경험과 AI 기술력을 융합하여, 구직자와 기업 모두가 만족하는 새로운 차원의 진로·취업 생태계를 구축하는 것이 우리의 목표입니다.</p>
       </div>
     </div>
   </section>
 
-  <!-- Key Clients Ticker -->
-  <section class="py-xl bg-primary/30 overflow-hidden">
-    <div class="w-full">
-      <div class="client-ticker">
-        <div class="ticker-content flex items-center gap-xl whitespace-nowrap">
-          <span class="ticker-item h2 text-bg/40 font-bold">서울시교육청</span>
-          <span class="ticker-item h2 text-bg/40 font-bold">산림청</span>
-          <span class="ticker-item h2 text-bg/40 font-bold">특허청</span>
-          <span class="ticker-item h2 text-bg/40 font-bold">고용노동부</span>
-          <span class="ticker-item h2 text-bg/40 font-bold">국방전직교육원</span>
-          <span class="ticker-item h2 text-bg/40 font-bold">LG전자</span>
-          <span class="ticker-item h2 text-bg/40 font-bold">현대자동차</span>
-          <span class="ticker-item h2 text-bg/40 font-bold">대한석탄공사</span>
-          <span class="ticker-item h2 text-bg/40 font-bold">한국보건복지인재원</span>
-          <span class="ticker-item h2 text-bg/40 font-bold">폴리텍대학</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Business Areas Section -->
-  <section id="services" class="py-xxl bg-bg">
-    <div class="max-w-[1280px] mx-auto px-md reveal">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
-        <div class="max-w-xl">
-          <span class="caption text-accent font-bold tracking-widest uppercase mb-xs inline-block">Core Business</span>
-          <h2 class="display text-primary">주요 사업 영역</h2>
-        </div>
-        <p class="body text-mute max-w-sm">
-          교육 기획부터 AI 미디어 플랫폼 운영까지, 미래 인재 양성을 위한 전방위 솔루션을 제공합니다.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
-        <!-- 1. Consulting -->
-        <div class="premium-card p-xl bg-white/5 border border-primary/10 rounded-3xl">
-          <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-lg">
-            <span class="text-3xl">🤝</span>
-          </div>
-          <h3 class="h1 text-primary mb-md">취업·진로 컨설팅</h3>
-          <ul class="text-sm text-mute/80 space-y-2 mb-lg">
-            <li>• 고교학점제 개별 과목 선택 및 생기부 설계</li>
-            <li>• 대기업 및 공기업 재취업지원 서비스 컨설팅</li>
-            <li>• 청년미래내일 일경험 기업 제안 및 설계</li>
-            <li>• 전국 50개 이상 특성화고 진로 및 인성 교육</li>
-          </ul>
-          <a href="programs.html" class="caption text-primary font-bold hover:text-accent flex items-center gap-xs">
-            프로그램 확인 <span class="text-lg">→</span>
-          </a>
-        </div>
-
-        <!-- 2. Education -->
-        <div class="premium-card p-xl bg-white/5 border border-primary/10 rounded-3xl">
-          <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-lg">
-            <span class="text-3xl">🏛️</span>
-          </div>
-          <h3 class="h1 text-primary mb-md">미래 역량 교육</h3>
-          <ul class="text-sm text-mute/80 space-y-2 mb-lg">
-            <li>• 챗GPT 등 생성형 AI 활용 실무 및 창작 교육</li>
-            <li>• 메타버스, 자율주행 등 80여 종 미래기술 체험</li>
-            <li>• 국방전직교육원 전역 장병 취업 역량 강화</li>
-            <li>• 대학 및 공공기관 맞춤형 위탁 교육 운영</li>
-          </ul>
-          <a href="programs.html" class="caption text-primary font-bold hover:text-accent flex items-center gap-xs">
-            위탁 교육 상담 <span class="text-lg">→</span>
-          </a>
-        </div>
-
-        <!-- 3. Platform -->
-        <div class="premium-card p-xl bg-white/5 border border-primary/10 rounded-3xl">
-          <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-lg">
-            <span class="text-3xl">🚀</span>
-          </div>
-          <h3 class="h1 text-primary mb-md">AI 미디어 & 플랫폼</h3>
-          <ul class="text-sm text-mute/80 space-y-2 mb-lg">
-            <li>• AI 기반 진로·진학 데이터 분석 및 매칭</li>
-            <li>• AI 북스토리: 동화책 작가 양성 및 출판 지원</li>
-            <li>• 전문 강사 커뮤니티 및 교수법 지원 (800명+)</li>
-            <li>• 에듀테크 콘텐츠 및 교구재 연구 개발</li>
-          </ul>
-          <a href="programs.html" class="caption text-primary font-bold hover:text-accent flex items-center gap-xs">
-            플랫폼 소개 <span class="text-lg">→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    </div>
-  </section>
-  <!-- Special Program Section: 2026 특성화고 프로그램 -->
-  <section id="special-program" class="bg-primary py-xxl relative overflow-hidden">
-    <!-- Decorative background -->
-    <div class="absolute top-0 right-0 w-[50%] h-full bg-accent/5 rounded-bl-[150px] pointer-events-none"></div>
-    <div class="absolute -top-32 -left-32 w-96 h-96 bg-primary/40 rounded-full blur-3xl pointer-events-none z-0"></div>
-    
-    <div class="max-w-[1280px] mx-auto px-md relative z-10 reveal">
-      
-      <!-- Section Title -->
-      <div class="mb-xl">
-        <div class="inline-block px-sm py-xs border border-accent/40 rounded-full text-accent caption font-bold tracking-widest mb-md">
-          SPECIAL PROGRAM
-        </div>
-        <h2 class="display text-bg mb-sm">2026 특성화고 프로그램</h2>
-        <p class="h2 text-bg/80 font-normal break-keep">
-          특성화고 학생들의 성공적인 취업과 진로 설계를 위한 맞춤형 캠프 및 밀착 컨설팅
-        </p>
-      </div>
-
-      <!-- Program Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="title-h1 fade-in-up">Our Services</h2>
+      <div class="services-grid">
         
-        <!-- Card 1 -->
-        <div class="bg-primary/90 backdrop-blur-xl rounded-[24px] p-xl border border-white/10 hover:border-accent/50 transition-default group shadow-2xl relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-secondary opacity-50"></div>
-          <div class="w-12 h-12 rounded-full bg-accent text-primary flex items-center justify-center mb-md font-bold text-xl group-hover:scale-110 transition-default shadow-[0_0_15px_rgba(56,189,248,0.4)]">
-            01
-          </div>
-          <h3 class="h1 text-heading mb-sm">AI 융합 진로·취업 캠프</h3>
-          <p class="body text-bg/70 break-keep leading-relaxed mb-md">
-            AI 툴을 활용한 직무 분석부터 이력서 작성, 모의 면접까지 특성화고 학생들의 전공과 적성을 고려한 실무 중심의 취업 준비 캠프입니다.
-          </p>
-          <ul class="body text-bg/90 space-y-xs opacity-80">
-            <li class="flex items-start gap-xs">
-              <span class="text-accent">✓</span> <span>최신 AI 기반 직무 분석</span>
-            </li>
-            <li class="flex items-start gap-xs">
-              <span class="text-accent">✓</span> <span>맞춤형 자기소개서 완성</span>
-            </li>
+        <!-- Service 1 -->
+        <div class="service-card fade-in-up">
+          <div class="service-icon">🤝</div>
+          <h3 class="title-h2">취업/진로 및 컨설팅 (B2C, B2G)</h3>
+          <ul>
+            <li>재취업지원 서비스 (기업 및 1:1 컨설팅)</li>
+            <li>청년미래내일 일경험 기관/기업 컨설팅</li>
+            <li>특성화고·대학생 진로 캠프</li>
+            <li>군 전역 예정 장병 진로 컨설팅</li>
+            <li>공기업 서류심사 및 면접위원 활동</li>
           </ul>
         </div>
 
-        <!-- Card 2 -->
-        <div class="bg-primary/90 backdrop-blur-xl rounded-[24px] p-xl border border-white/10 hover:border-accent/50 transition-default group shadow-2xl relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-secondary opacity-50"></div>
-          <div class="w-12 h-12 rounded-full bg-accent text-primary flex items-center justify-center mb-md font-bold text-xl group-hover:scale-110 transition-default shadow-[0_0_15px_rgba(56,189,248,0.4)]">
-            02
-          </div>
-          <h3 class="h1 text-heading mb-sm">취업 역량 강화 특강</h3>
-          <p class="body text-bg/70 break-keep leading-relaxed mb-md mt-sm">
-            면접관을 사로잡는 비즈니스 매너, 퍼스널 컬러 및 이미지 메이킹 등 취업 성공률을 높이는 핵심 특강을 제공합니다.
-          </p>
-          <ul class="body text-bg/90 space-y-xs opacity-80">
-            <li class="flex items-start gap-xs">
-              <span class="text-accent">✓</span> <span>비즈니스 매너 & 커뮤니케이션</span>
-            </li>
-            <li class="flex items-start gap-xs">
-              <span class="text-accent">✓</span> <span>성공적인 면접 이미지 메이킹</span>
-            </li>
+        <!-- Service 2 -->
+        <div class="service-card fade-in-up">
+          <div class="service-icon">🏢</div>
+          <h3 class="title-h2">기업 및 공공기관 교육 (B2B, B2G)</h3>
+          <ul>
+            <li>법정의무교육 진행</li>
+            <li>직무 역량 강화 및 리더십 교육</li>
+            <li>주요 고객사: 산림청, 특허청, 한전KPS 등 다수 파트너십 구축</li>
           </ul>
         </div>
 
-        <!-- Card 3 -->
-        <div class="bg-primary/90 backdrop-blur-xl rounded-[24px] p-xl border border-white/10 hover:border-accent/50 transition-default group shadow-2xl relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-secondary opacity-50"></div>
-          <div class="w-12 h-12 rounded-full bg-accent text-primary flex items-center justify-center mb-md font-bold text-xl group-hover:scale-110 transition-default shadow-[0_0_15px_rgba(56,189,248,0.4)]">
-            03
-          </div>
-          <h3 class="h1 text-heading mb-sm">1:1 밀착 진로 컨설팅</h3>
-          <p class="body text-bg/70 break-keep leading-relaxed mb-md">
-            단순한 지도를 넘어, 개인별 강점 진단 및 목표 기업 분석을 통해 체계적이고 실질적인 1:1 밀착 취업 컨설팅을 진행합니다.
-          </p>
-          <ul class="body text-bg/90 space-y-xs opacity-80">
-            <li class="flex items-start gap-xs">
-              <span class="text-accent">✓</span> <span>개인별 강점 진단 및 목표 설정</span>
-            </li>
-            <li class="flex items-start gap-xs">
-              <span class="text-accent">✓</span> <span>맞춤형 취업 로드맵 제시</span>
-            </li>
+        <!-- Service 3 -->
+        <div class="service-card fade-in-up">
+          <div class="service-icon">🎙️</div>
+          <h3 class="title-h2">주요 수석 및 특임 강의</h3>
+          <ul>
+            <li>챗GPT 활용 전문가 기획 및 강의</li>
+            <li>인베스트교육개발원 대표 직강</li>
+            <li>한국열린사이버대학 특임교수 활동</li>
+            <li>커뮤니케이션, 퍼스널 컬러, 이미지메이킹</li>
           </ul>
         </div>
 
-      </div>
-
-      <!-- Call to Action -->
-      <div class="mt-xl text-center">
-         <p class="caption text-bg/80 mb-sm">특성화고 프로그램의 세부 커리큘럼 및 안내서가 필요하신가요?</p>
-         <a href="#contact" class="inline-block border border-accent bg-accent/10 text-accent px-lg py-sm rounded-full body font-bold hover:bg-accent hover:text-primary transition-default">
-           프로그램 제안서 문의하기
-         </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Programs Summary Section -->
-  <section id="programs" class="py-xxl relative z-10">
-    <div class="max-w-[1280px] mx-auto px-md relative z-10 reveal">
-      
-      <!-- Section Title (Center) -->
-      <div class="text-center mb-xxl">
-        <div class="inline-block px-sm py-1 mb-sm border border-accent/30 rounded-full bg-accent/10 backdrop-blur-sm">
-          <span class="caption text-accent font-bold tracking-widest uppercase">Programs</span>
-        </div>
-        <h2 class="display text-heading mb-md font-bold drop-shadow-md">다양한 진로체험 프로그램</h2>
-        <p class="h2 font-normal text-mute break-keep">미래 직업부터 문화예술까지, 청소년의 꿈에 맞는 다양한 AI·진로 프로그램을 체험하세요.</p>
-      </div>
-
-      <!-- Categories Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-        
-        <!-- Category 01 -->
-        <div class="bg-primary/80 backdrop-blur-xl p-lg flex flex-col border border-white/10 rounded-2xl hover:border-accent/50 hover:-translate-y-2 transition-default group shadow-[0_8px_30px_rgba(0,0,0,0.3)]">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-r from-accent/20 to-secondary/20 flex items-center justify-center mb-md border border-accent/30 group-hover:scale-110 transition-default">
-            <span class="text-3xl drop-shadow-md">🚗</span>
-          </div>
-          <h3 class="h2 text-heading mb-sm font-bold">미래 모빌리티</h3>
-          <p class="body text-mute mb-lg flex-grow break-keep">
-            전기차, 자율주행, 드론, 수소차 등 차세대 이동수단의 원리를 배우고 직접 시뮬레이션해 봅니다.
-          </p>
-          <div class="flex flex-wrap gap-xs mt-auto">
-            <span class="caption text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">#자율주행</span>
-            <span class="caption text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">#드론</span>
-            <span class="caption text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">#친환경</span>
-          </div>
-        </div>
-
-        <!-- Category 02 -->
-        <div class="bg-primary/40 backdrop-blur-xl p-lg flex flex-col border border-primary/20 rounded-2xl hover:border-secondary/50 hover:-translate-y-2 transition-default group shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-r from-secondary/20 to-accent/20 flex items-center justify-center mb-md border border-secondary/30 group-hover:scale-110 transition-default">
-            <span class="text-3xl drop-shadow-md">🦾</span>
-          </div>
-          <h3 class="h2 text-heading mb-sm font-bold">로봇틱스</h3>
-          <p class="body text-mute mb-lg flex-grow break-keep">
-            로봇팔, 물류 로봇, 로봇 의수 등 산업과 일상을 변화시키는 첨단 로봇 기술을 설계하고 제어합니다.
-          </p>
-          <div class="flex flex-wrap gap-xs mt-auto">
-            <span class="caption text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">#로봇팔</span>
-            <span class="caption text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">#자동화</span>
-            <span class="caption text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">#우주항공</span>
-          </div>
-        </div>
-
-        <!-- Category 03 -->
-        <div class="bg-primary/40 backdrop-blur-xl p-lg flex flex-col border border-primary/20 rounded-2xl hover:border-warning/50 hover:-translate-y-2 transition-default group shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-r from-warning/20 to-accent/20 flex items-center justify-center mb-md border border-warning/30 group-hover:scale-110 transition-default">
-            <span class="text-3xl drop-shadow-md">🧠</span>
-          </div>
-          <h3 class="h2 text-heading mb-sm font-bold">AI 차세대 직업</h3>
-          <p class="body text-mute mb-lg flex-grow break-keep">
-            휴머노이드 전문가, AI 과학수사대, AI 웹앱 개발자 등 다가올 미래의 유망 직업을 체험합니다.
-          </p>
-          <div class="flex flex-wrap gap-xs mt-auto">
-            <span class="caption text-warning bg-warning/10 px-3 py-1 rounded-full border border-warning/20">#인공지능</span>
-            <span class="caption text-warning bg-warning/10 px-3 py-1 rounded-full border border-warning/20">#바이브코딩</span>
-            <span class="caption text-warning bg-warning/10 px-3 py-1 rounded-full border border-warning/20">#가상현실</span>
-          </div>
-        </div>
-        
-        <!-- Category 04 -->
-        <div class="bg-primary/80 backdrop-blur-xl p-lg flex flex-col border border-white/10 rounded-2xl hover:border-accent/50 hover:-translate-y-2 transition-default group shadow-[0_8px_30px_rgba(0,0,0,0.3)]">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-r from-accent/20 to-secondary/20 flex items-center justify-center mb-md border border-accent/30 group-hover:scale-110 transition-default">
-            <span class="text-3xl drop-shadow-md">💡</span>
-          </div>
-          <h3 class="h2 text-heading mb-sm font-bold">AI &amp; 창업</h3>
-          <p class="body text-mute mb-lg flex-grow break-keep">
-            생성형 AI로 동화책, 음악, 홍보영상을 창작하거나 기후 위기 문제를 해결할 시제품을 기획해봅니다.
-          </p>
-          <div class="flex flex-wrap gap-xs mt-auto">
-            <span class="caption text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">#SDGs</span>
-            <span class="caption text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">#시제품제작</span>
-            <span class="caption text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">#콘텐츠창작</span>
-          </div>
-        </div>
-
-        <!-- Category 05 -->
-        <div class="bg-primary/40 backdrop-blur-xl p-lg flex flex-col border border-primary/20 rounded-2xl hover:border-secondary/50 hover:-translate-y-2 transition-default group shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-r from-secondary/20 to-accent/20 flex items-center justify-center mb-md border border-secondary/30 group-hover:scale-110 transition-default">
-            <span class="text-3xl drop-shadow-md">📌</span>
-          </div>
-          <h3 class="h2 text-heading mb-sm font-bold">진로·진학 설계</h3>
-          <p class="body text-mute mb-lg flex-grow break-keep">
-            개별 최적화된 고교학점제 설계, 학생부 로드맵, 스카이 캠퍼스 탐방 등을 통해 체계적인 미래를 준비합니다.
-          </p>
-          <div class="flex flex-wrap gap-xs mt-auto">
-            <span class="caption text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">#고교학점제</span>
-            <span class="caption text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">#입시컨설팅</span>
-            <span class="caption text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">#생기부</span>
-          </div>
-        </div>
-        
-        <!-- Category 06 (Call to Action) -->
-        <div class="bg-primary/60 backdrop-blur-xl p-lg flex flex-col border border-accent/30 rounded-2xl hover:border-accent hover:-translate-y-2 transition-default group shadow-[0_8px_30px_rgba(0,0,0,0.3)] border-dashed justify-center items-center text-center">
-          <span class="text-5xl mb-sm opacity-90 group-hover:scale-110 transition-default">🚀</span>
-          <h3 class="h2 text-accent mb-xs font-bold">더 많은 프로그램</h3>
-          <p class="body text-mute mb-md">전문 직업인 체험 등 총 80여 개의 다채로운 교육</p>
-          <a href="programs.html" class="inline-flex items-center justify-center bg-gradient-to-r from-accent to-secondary text-bg font-bold px-lg py-sm rounded-full shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:shadow-[0_0_30px_rgba(56,189,248,0.7)] hover:scale-105 transition-all w-full max-w-[200px]">
-            전체 프로그램 보기
-          </a>
+        <!-- Service 4 -->
+        <div class="service-card fade-in-up">
+          <div class="service-icon">💻</div>
+          <h3 class="title-h2">SaaS 플랫폼</h3>
+          <ul>
+            <li>AI 기반 교육-취업 연계 매칭 시스템</li>
+            <li>맞춤형 교육 큐레이션</li>
+            <li>기업-인재 다이렉트 매칭 (예정/운영 중)</li>
+          </ul>
         </div>
 
       </div>
@@ -551,421 +108,116 @@
   </section>
 
   <!-- Achievements Section -->
-  <section id="achievements" class="py-xxl rounded-t-[48px] -mt-xl relative z-20">
-    <div class="max-w-[1280px] mx-auto px-md reveal">
-      
-      <!-- Section Title -->
-      <div class="mb-xxl flex flex-col md:flex-row md:items-end justify-between gap-md">
-        <div>
-          <h2 class="display text-bg mb-sm">숫자로 증명합니다</h2>
-          <p class="h2 font-normal text-accent">2026년 기준 누적 실적</p>
+  <section id="achievements" class="achievements">
+    <div class="container">
+      <h2 class="title-h1 fade-in-up">숫자로 증명하는 신뢰</h2>
+      <div class="stats-grid fade-in-up">
+        <div class="stat-item">
+          <div class="stat-number">150+</div>
+          <div class="stat-label">누적 운영 프로그램</div>
         </div>
-        <a href="history.html" class="body font-bold text-accent hover:underline flex items-center gap-xs">
-          상세 연혁 및 성과 보기 &rarr;
-        </a>
-      </div>
-
-      <!-- Stats Grid -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-lg gap-x-md md:gap-xl mb-xxl">
-        <div class="flex flex-col items-start border-l-2 border-accent/30 pl-sm md:pl-lg">
-          <div class="display text-heading mb-sm"><span class="count-up" data-target="800">0</span><span class="text-accent opacity-0 plus-symbol">+</span></div>
-          <p class="caption text-heading/80 font-bold">강사 인프라 (명)</p>
+        <div class="stat-item">
+          <div class="stat-number">12,000+</div>
+          <div class="stat-label">누적 수강생</div>
         </div>
-        <div class="flex flex-col items-start border-l-2 border-accent/30 pl-sm md:pl-lg">
-          <div class="display text-heading mb-sm"><span class="count-up" data-target="100">0</span><span class="text-accent opacity-0 plus-symbol">+</span></div>
-          <p class="caption text-heading/80 font-bold">2025년 AI·SW 캠프</p>
-        </div>
-        <div class="flex flex-col items-start border-l-2 border-accent/30 pl-sm md:pl-lg">
-          <div class="display text-heading mb-sm"><span class="count-up" data-target="800">0</span><span class="text-accent opacity-0 plus-symbol">+</span></div>
-          <p class="caption text-heading/80 font-bold">학교·기관 실적</p>
-        </div>
-        <div class="flex flex-col items-start border-l-2 border-accent/30 pl-sm md:pl-lg">
-          <div class="display text-heading mb-sm"><span class="count-up" data-target="60">0</span><span class="text-accent opacity-0 plus-symbol">+</span></div>
-          <p class="caption text-heading/80 font-bold">AI 동화책 작가 배출</p>
+        <div class="stat-item">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">파트너 기관 및 기업</div>
         </div>
       </div>
-
-      <!-- Field Sketch Gallery Area -->
-      <div class="border-t border-bg/10 pt-xl relative overflow-hidden">
-        <p class="caption text-bg/50 font-bold tracking-widest mb-lg">주요 현장 스케치</p>
-        <div class="w-full bg-white/5 backdrop-blur-md rounded-2xl py-lg relative group overflow-hidden border border-white/5 shadow-2xl">
-          <div class="animate-marquee gap-md px-md items-center">
-            <!-- 1 Set -->
-            <img src="assets/images/media__1777065130197.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065132434.jpg" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065134131.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065185713.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065188163.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065190325.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065192288.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065194345.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <!-- Duplicate for infinite scroll -->
-            <img src="assets/images/media__1777065130197.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065132434.jpg" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065134131.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065185713.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065188163.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065190325.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065192288.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-            <img src="assets/images/media__1777065194345.png" alt="현장 스케치" loading="lazy" class="h-40 md:h-56 w-auto object-cover rounded-xl shadow-md opacity-80 group-hover:opacity-100 transition-opacity">
-          </div>
-          
-          <!-- Fade Overlay -->
-          <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0a0715] to-transparent pointer-events-none"></div>
-          <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0a0715] to-transparent pointer-events-none"></div>
-        </div>
-      </div>
-
+      <p style="margin-top: var(--space-xl); opacity: 0.7; font-size: var(--text-caption);">* 2026년 기준</p>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-xxl relative z-10">
-    <div class="max-w-[1280px] mx-auto px-md reveal">
-      
-      <!-- Section Title -->
-      <div class="mb-xxl text-center">
-        <h2 class="display text-primary mb-sm">이야기를 시작합니다</h2>
-        <p class="h2 font-normal text-mute">교육 수요가 있으시면 언제든 문의하세요.</p>
+  <section id="contact" class="container">
+    <h2 class="title-h1 fade-in-up">Contact Us</h2>
+    <div class="contact-grid fade-in-up">
+      <div class="contact-info">
+        <div class="contact-info-block">
+          <h3>본원 (고양)</h3>
+          <p>경기도 고양시 일산동구 고풍로 109</p>
+          <p>T. 010.9001.2942</p>
+        </div>
+        <div class="contact-info-block">
+          <h3>지사 (강남)</h3>
+          <p>서울특별시 강남구 테헤란로 79길 6 JS타워 3층 V1271</p>
+          <p>T. 010.9001.2942</p>
+        </div>
       </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-xxl items-start">
-        
-        <!-- Left: Office Info (5 cols) -->
-        <div class="lg:col-span-5 space-y-lg">
-          <div class="premium-card p-xl border border-primary/5">
-            <div class="caption text-accent font-bold tracking-widest mb-md">본원 — GOYANG</div>
-            <h3 class="h1 text-primary mb-lg">인베스트교육개발원</h3>
-            <div class="space-y-sm body text-mute">
-              <p class="flex items-start gap-sm"><span class="text-accent">📍</span> 경기도 고양시 일산동구 고풍로 109</p>
-              <p class="flex items-start gap-sm"><span class="text-accent">📞</span> T. 010-9001-2942</p>
-              <p class="flex items-start gap-sm"><span class="text-accent">🕒</span> 평일 09:00 — 18:00</p>
-            </div>
+      
+      <div class="contact-form">
+        <!-- Formspree placeholder. User will replace action URL -->
+        <form action="https://formspree.io/f/your_form_id" method="POST">
+          <div class="form-group">
+            <label for="name">성함 / 기관명</label>
+            <input type="text" id="name" name="name" required placeholder="홍길동 / ○○대학교">
           </div>
-
-          <div class="premium-card p-xl border border-primary/5">
-            <div class="caption text-accent font-bold tracking-widest mb-md">자사 — GANGNAM</div>
-            <h3 class="h1 text-primary mb-lg">주식회사 케이미디어센터</h3>
-            <div class="space-y-sm body text-mute">
-              <p class="flex items-start gap-sm"><span class="text-accent">📍</span> 서울특별시 강남구 테헤란로 79길 6 JS타워 3층 V1271</p>
-              <p class="flex items-start gap-sm"><span class="text-accent">📞</span> T. 010-9001-2942</p>
-              <p class="flex items-start gap-sm"><span class="text-accent">🕒</span> 평일 09:00 — 18:00</p>
-            </div>
+          <div class="form-group">
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" required placeholder="example@email.com">
           </div>
-        </div>
-
-        <!-- Right: Inquiry Form (7 cols) -->
-        <div class="lg:col-span-7 premium-card p-xxl border border-primary/5">
-          <form id="contact-form" class="space-y-xl" action="https://formspree.io/f/xkokeqjp" method="POST">
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
-              <div class="space-y-sm">
-                <label for="name" class="caption font-bold text-primary">성함</label>
-                <input type="text" id="name" name="name" required placeholder="이름을 입력하세요" class="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-sm focus:ring-0 focus:border-accent text-heading body transition-default placeholder:text-white/30">
-              </div>
-              <div class="space-y-sm">
-                <label for="email" class="caption font-bold text-primary">이메일</label>
-                <input type="email" id="email" name="email" required placeholder="example@email.com" class="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-sm focus:ring-0 focus:border-accent text-heading body transition-default placeholder:text-white/30">
-              </div>
-            </div>
-
-            <div class="space-y-sm">
-              <label for="company" class="caption font-bold text-primary">소속 기관/회사</label>
-              <input type="text" id="company" name="org" placeholder="소속을 입력하세요" class="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-sm focus:ring-0 focus:border-accent text-heading body transition-default placeholder:text-white/30">
-            </div>
-
-            <div class="space-y-sm">
-              <label for="inquiryType" class="caption font-bold text-primary">문의 유형</label>
-              <select id="inquiryType" name="type" class="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-sm focus:ring-0 focus:border-accent text-heading body transition-default placeholder:text-white/30 cursor-pointer">
-                <option value="" disabled selected class="text-black">문의하실 영역을 선택해 주세요</option>
-                <option value="b2g" class="text-black">B2G 공공기관</option>
-                <option value="b2b" class="text-black">B2B 기업교육</option>
-                <option value="b2c" class="text-black">B2C 개인상담</option>
-                <option value="partner" class="text-black">파트너/기타</option>
-              </select>
-            </div>
-
-            <div class="space-y-sm">
-              <label for="details" class="caption font-bold text-primary">상세 내용</label>
-              <textarea id="details" name="message" required rows="5" placeholder="문의하실 내용을 자세히 적어주세요." class="w-full border-0 border-b-2 border-primary/20 bg-transparent px-0 py-sm focus:ring-0 focus:border-accent text-primary body resize-none transition-default"></textarea>
-            </div>
-
-            <div class="pt-lg">
-              <button type="submit" id="submit-btn" class="w-full btn-primary h2 py-md rounded-full shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed">
-                <span id="submit-text">문의 보내기</span>
-              </button>
-            </div>
-
-            <!-- Messages -->
-            <div id="form-success" class="hidden mt-md p-md bg-accent/10 border border-accent/30 rounded-lg text-primary text-center font-bold body">
-              감사합니다, 곧 연락드리겠습니다.
-            </div>
-            
-            <div id="form-error" class="hidden mt-md p-md bg-red-50 border border-red-200 rounded-lg text-red-600 text-center font-bold body">
-              오류가 발생했습니다. 다시 시도해 주세요.
-            </div>
-
-          </form>
-        </div>
-
+          <div class="form-group">
+            <label for="message">문의 내용</label>
+            <textarea id="message" name="message" rows="5" required placeholder="교육 과정이나 협업에 관해 문의하실 내용을 남겨주세요."></textarea>
+          </div>
+          <button type="submit" class="btn">문의 남기기</button>
+        </form>
       </div>
     </div>
   </section>
-  </main>
 
-  <!-- Footer Section -->
-  <footer id="footer" class="bg-black/50 backdrop-blur-lg text-bg pt-xxl pb-xl border-t border-bg/10">
-    <div class="max-w-[1280px] mx-auto px-md">
-      
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-xl mb-xxl">
-        
-        <div class="md:col-span-5 space-y-md">
-          <div class="h2 tracking-wider">INBEST · K-MEDIA</div>
-          <p class="body text-bg/70">교육과 미디어가 만나<br>사람과 기회를 잇습니다.</p>
-          <!-- Social Links & AI Story Workshop -->
-          <div class="flex flex-col sm:flex-row sm:items-center gap-md pt-sm">
-            <div class="flex items-center gap-sm">
-              <!-- Google -->
-              <a href="#" aria-label="Google" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition-all duration-300 shadow-md">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
-              </a>
-              <!-- Naver Blog -->
-              <a href="#" aria-label="Naver Blog" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#03C75A] hover:text-white transition-all duration-300 shadow-md">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"/></svg>
-              </a>
-              <!-- Instagram -->
-              <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:text-white transition-all duration-300 shadow-md">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              </a>
-              <!-- KakaoTalk -->
-              <a href="#" aria-label="KakaoTalk" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FEE500] hover:text-[#3C1E1E] transition-all duration-300 shadow-md">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3c-5.523 0-10 3.656-10 8.167 0 2.915 1.933 5.485 4.887 6.94l-1.037 3.79c-.066.24.238.412.441.258l4.355-2.859c.441.059.892.089 1.354.089 5.523 0 10-3.655 10-8.166C22 6.656 17.523 3 12 3z"/></svg>
-              </a>
-            </div>
-            
-            <!-- AI Story Workshop Link -->
-            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-xs px-md py-sm rounded-full border border-accent/50 text-accent caption font-bold tracking-wider hover:bg-accent hover:text-bg transition-default shadow-md group">
-              <span>✨ AI 스토리 공작소 바로가기</span>
-              <svg class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="md:col-span-3">
-          <h4 class="caption text-accent font-bold tracking-widest mb-lg">법인</h4>
-          <ul class="space-y-sm body text-bg/80">
-            <li>
-              인베스트교육개발원 (대표 임은정)
-              <div class="caption text-bg/50 mt-1">사업자등록번호: 431-58-00563</div>
-            </li>
-            <li class="pt-sm">
-              주식회사 케이미디어센터 (대표 임은정)
-              <div class="caption text-bg/50 mt-1">사업자등록번호: 166-88-03552</div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="md:col-span-4">
-          <h4 class="caption text-accent font-bold tracking-widest mb-lg">문의</h4>
-          <ul class="space-y-sm body text-bg/80">
-            <li>대표 메일 rjdgh1@nate.com</li>
-            <li>대표 전화 010-9001-2942</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pt-lg border-t border-bg/20 flex flex-col md:flex-row items-center justify-between gap-md caption text-bg/50 font-bold">
-        <p>&copy; 2026 Inbest Education &amp; K-Media Center. All rights reserved.</p>
-        <div class="flex gap-md">
-          <a href="#" class="hover:text-bg transition-default">개인정보처리방침</a>
-          <span>·</span>
-          <a href="#" class="hover:text-bg transition-default">이용약관</a>
-        </div>
-      </div>
-
+  <!-- Footer -->
+  <footer>
+    <div class="container fade-in-up">
+      <h3 style="font-family: 'Fraunces', serif; margin-bottom: var(--space-sm);">Invest & K-Media</h3>
+      <p class="text-caption">인베스트교육개발원 | 주식회사 케이미디어센터 | 대표: 임은정</p>
+      <p class="text-caption">Copyright © 2026 Invest Education & K-Media Center. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- Scroll Animation Script -->
   <script>
-    // 1. Header scroll variables
-    const mainHeader = document.getElementById('main-header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        mainHeader.classList.add('shadow-md');
-      } else {
-        mainHeader.classList.remove('shadow-md');
-      }
-    });
-
-    // Mobile Menu Logic
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    const hamburger = document.getElementById('hamburger-icon');
-    let isMenuOpen = false;
-
-    mobileBtn.addEventListener('click', () => {
-      isMenuOpen = !isMenuOpen;
-      if (isMenuOpen) {
-        mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
-        document.body.style.overflow = 'hidden';
-        hamburger.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'; 
-      } else {
-        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-        document.body.style.overflow = '';
-        hamburger.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>'; 
-      }
-    });
-
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        isMenuOpen = false;
-        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-        document.body.style.overflow = '';
-        hamburger.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>';
-      });
-    });
-
-    // 2. Scroll Reveal Observer
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealOptions = {
-      threshold: 0.15, // Trigger when 15% of element is visible
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, revealOptions);
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // 3. Count-up Animation
-    const countElements = document.querySelectorAll('.count-up');
-    const countOptions = {
-      threshold: 0.5 // Require 50% visibility for the numbers to start
-    };
-
-    const countObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const targetEl = entry.target;
-          const targetValue = parseInt(targetEl.getAttribute('data-target'), 10);
-          const duration = 1500; // 1.5 seconds
-          const startTime = performance.now();
-          const plusSymbol = targetEl.nextElementSibling;
-          
-          function updateCount(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            
-            // easeOutQuart
-            const easeProgress = 1 - Math.pow(1 - progress, 4);
-            const currentVal = Math.floor(targetValue * easeProgress);
-            
-            targetEl.textContent = currentVal.toLocaleString();
-            
-            if (progress < 1) {
-              requestAnimationFrame(updateCount);
-            } else {
-              targetEl.textContent = targetValue.toLocaleString();
-              plusSymbol.classList.remove('opacity-0');
-              plusSymbol.classList.add('transition-opacity', 'duration-500');
-            }
-          }
-          requestAnimationFrame(updateCount);
-          observer.unobserve(targetEl);
-        }
-      });
-    }, countOptions);
-
-    countElements.forEach(el => countObserver.observe(el));
-
-    // Hero Slideshow Script
-    const heroImages = [
-      'assets/images/media__1777065132434.jpg',
-      'assets/images/media__1777065127270.png',
-      'assets/images/media__1777065130197.png',
-      'assets/images/media__1777065134131.png',
-      'assets/images/media__1777065185713.png',
-      'assets/images/media__1777065188163.png',
-      'assets/images/media__1777065190325.png',
-      'assets/images/media__1777065192288.png',
-      'assets/images/media__1777065194345.png'
-    ];
-    
-    const slideContainer = document.getElementById('hero-slide-container');
-    if(slideContainer) {
-      const img1 = slideContainer.children[0];
-      const img2 = slideContainer.children[1];
-      let currentSlide = 0;
-      let isImg1Front = true;
-
-      // 4초 간격으로 이미지 크로스페이드(Crossfade) 전환
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % heroImages.length;
-        if (isImg1Front) {
-          img2.src = heroImages[currentSlide];
-          img1.classList.replace('opacity-100', 'opacity-0');
-          img2.classList.replace('opacity-0', 'opacity-100');
-          img2.style.zIndex = '10';
-          img1.style.zIndex = '0';
+    document.addEventListener("DOMContentLoaded", () => {
+      // Header scroll effect
+      const header = document.getElementById("header");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
         } else {
-          img1.src = heroImages[currentSlide];
-          img2.classList.replace('opacity-100', 'opacity-0');
-          img1.classList.replace('opacity-0', 'opacity-100');
-          img1.style.zIndex = '10';
-          img2.style.zIndex = '0';
-        }
-        isImg1Front = !isImg1Front;
-      }, 4000);
-    }
-
-    // Formspree AJAX Submission
-    const contactForm = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const submitText = document.getElementById('submit-text');
-    const formSuccess = document.getElementById('form-success');
-    const formError = document.getElementById('form-error');
-
-    if (contactForm) {
-      contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        formSuccess.classList.add('hidden');
-        formError.classList.add('hidden');
-        
-        submitBtn.disabled = true;
-        submitText.textContent = '전송 중...';
-        
-        try {
-          const formData = new FormData(contactForm);
-          const response = await fetch(contactForm.action, {
-            method: contactForm.method,
-            body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          });
-          
-          if (response.ok) {
-            formSuccess.classList.remove('hidden');
-            contactForm.reset();
-          } else {
-            formError.classList.remove('hidden');
-          }
-        } catch (error) {
-          formError.classList.remove('hidden');
-        } finally {
-          submitBtn.disabled = false;
-          submitText.textContent = '문의 보내기';
+          header.classList.remove("scrolled");
         }
       });
-    }
+
+      // Fade-in-up observer
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in-up').forEach(el => {
+        observer.observe(el);
+      });
+      
+      // Trigger immediately for elements already in view
+      setTimeout(() => {
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if(rect.top < window.innerHeight) {
+            el.classList.add('visible');
+          }
+        });
+      }, 100);
+    });
   </script>
 </body>
 </html>
