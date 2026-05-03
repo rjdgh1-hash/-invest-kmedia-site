@@ -3,11 +3,11 @@
 
 :root {
   /* Color Tokens */
-  --color-primary: #1A3A52;
-  --color-accent: #D4A017;
-  --color-bg: #F5F1EA;
-  --color-text: #1A1A1A;
-  --color-mute: #6E6A63;
+  --color-primary: #0284C7; /* Sky Blue */
+  --color-accent: #10B981; /* Emerald Green */
+  --color-bg: #FFFFFF;
+  --color-text: #0F172A;
+  --color-mute: #64748B;
 
   /* Typography Scale */
   --text-display: 3rem;   /* 48px */
@@ -127,7 +127,7 @@ section {
 }
 
 .btn:hover {
-  background-color: #b58813;
+  background-color: #059669;
   transform: translateY(-2px);
 }
 
@@ -194,7 +194,7 @@ section {
   display: flex;
   align-items: center;
   padding-top: var(--space-xxl); /* offset for header */
-  background: linear-gradient(135deg, var(--color-bg) 0%, #e6dfce 100%);
+  background: linear-gradient(135deg, #F0FDF4 0%, #E0F2FE 100%);
 }
 
 .hero-content {
@@ -244,15 +244,16 @@ section {
 }
 
 .service-card {
-  background-color: var(--color-bg);
+  background-color: #ffffff;
   padding: var(--space-lg);
   border-radius: 8px;
+  border: 1px solid #E2E8F0;
   transition: transform var(--transition-default), box-shadow var(--transition-default);
 }
 
 .service-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(26, 58, 82, 0.1);
+  box-shadow: 0 12px 24px rgba(2, 132, 199, 0.1);
 }
 
 .service-icon {
@@ -283,13 +284,13 @@ section {
 
 /* Achievements Section */
 .achievements {
-  background-color: var(--color-primary);
-  color: #fff;
+  background-color: #E0F2FE;
+  color: var(--color-text);
   text-align: center;
 }
 
 .achievements .title-h1 {
-  color: #fff;
+  color: var(--color-primary);
 }
 
 .stats-grid {
@@ -303,7 +304,7 @@ section {
   font-family: 'Fraunces', serif;
   font-size: 4rem;
   font-weight: 700;
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin-bottom: var(--space-xs);
 }
 
@@ -376,10 +377,11 @@ section {
 
 /* Footer */
 footer {
-  background-color: #112636;
-  color: rgba(255, 255, 255, 0.7);
+  background-color: #F8FAFC;
+  color: var(--color-text);
   padding: var(--space-lg) 0;
   text-align: center;
+  border-top: 1px solid #E2E8F0;
 }
 
 footer p {
